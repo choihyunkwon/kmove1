@@ -15,6 +15,8 @@
    <td><input type="text" nema="name"/></td>
   </tr>
 
+
+
     <tr>
    <td> 아이디 </td>
    <td><input type="text" name="id"/>
