@@ -10,12 +10,16 @@
  <h1> 회원가입 </h1>
  <FORM method="post" action="./join001/Joinpro.jsp">
  <table border="2" bgcolor="wheat"> 
+ 
+ 
+ 
+ 
+ 
+ 
   <tr>
    <td> 이름 </td>
    <td><input type="text" nema="name"/></td>
   </tr>
-
-
 
     <tr>
    <td> 아이디 </td>
