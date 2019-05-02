@@ -11,7 +11,7 @@ public class MemberDAO {
 	private PreparedStatement ps;
 	private ResultSet rs;
 	
-	//È¸¿ø°¡ÀÔ Ã³¸® ¸Þ¼Òµå
+	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	
 	public int join(MemberDTO dto) {
 		int cnt =0;
@@ -56,9 +56,10 @@ public class MemberDAO {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, pwd);
+			
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				//ÀÏÄ¡ÇÏ´Â È¸¿øÁ¤º¸¸¦ ´ã´Â´Ù. DTO
+				//ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â´ï¿½. DTO
 				dto= new MemberDTO();
 				dto.setName(rs.getString("name"));
 				dto.setUserid(rs.getString("userid"));
@@ -87,7 +88,7 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@localhost:1521:xe", "kmpro123", "kmpro963");
+				"jdbc:oracle:thin:@172.16.20.38:1521:xe", "kmove", "1234");
 		}catch(Exception e) {
 		}
 	}
