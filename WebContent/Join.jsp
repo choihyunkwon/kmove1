@@ -11,23 +11,18 @@
  <FORM method="post" action="./join001/Joinpro.jsp">
  <table border="2" bgcolor="wheat"> 
  
- 
- 
- 
- 
- 
   <tr>
    <td> 이름 </td>
-   <td><input type="text" nema="name"/></td>
+   <td><input type="text" name="name"/></td>
   </tr>
-
+  
     <tr>
    <td> 아이디 </td>
    <td><input type="text" name="id"/>
    <input type="button" value="중복확인"/>
    </td>
   </tr>
-
+  
   <tr>
    <td> 암호 </td>
    <td><input type="password" name="password"/></td>
