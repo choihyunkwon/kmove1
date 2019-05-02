@@ -40,7 +40,6 @@
    </td>
   </tr>
   
-  <br/>
   </TABLE>
 
    <input type="submit" value="회원가입"/>
