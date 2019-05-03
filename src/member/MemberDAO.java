@@ -95,7 +95,7 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@172.16.20.38:1521:xe", "kmove", "1234");
+				"jdbc:oracle:thin:@172.16.20.38:1521:xe", "kmpro", "1234");
 			System.out.println("작동됨");
 		}catch(Exception e) {
 			System.out.println("앙됨");
