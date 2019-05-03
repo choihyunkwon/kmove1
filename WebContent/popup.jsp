@@ -17,7 +17,7 @@
 		</tr>
 		<tr>
 			<th>사용 금액</th>
-			<td><input type="text" disabled="disabled"/></td>
+			<td><input type="text" /></td>
 		</tr></br>
 		<tr>
 			<th>사용처</th>
