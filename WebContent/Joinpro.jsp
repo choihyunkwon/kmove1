@@ -1,5 +1,6 @@
-<%@ page import="member.MemberDAO"%>
-<%@ page import="member.MemberDTO"%>
+
+<%@page import="member.MemberDTO"%>
+<%@page import="member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,13 +11,13 @@
 </head>
 <%
 MemberDAO da = new MemberDAO(); 
-//MemberDTO dt = new MemberDTO(); 
-//dt.setUserid(request.getParameter("name"));
-//dt.setUserid(request.getParameter("userid"));
-//dt.setUserid(request.getParameter("userpwd"));
-//dt.setUserid(request.getParameter("gender"));
+MemberDTO dt = new MemberDTO(); 
+dt.setName(request.getParameter("name"));
+dt.setUserid(request.getParameter("userid"));
+dt.setUserpwd(request.getParameter("userpwd"));
+dt.setGender(request.getParameter("gender"));
 
-//da.join(dt);
+da.join(dt);
 %>
 <body>
 회원가입 완료

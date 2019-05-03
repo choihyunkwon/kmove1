@@ -1,20 +1,20 @@
 package member;
 
 public class MemberDTO {
-	private String userid, userpwd, name, gender;
+	private String id, password, name, gender;
 	
 	public String getUserid() {
-		return userid;
+		return  id;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUserid(String  id) {
+		this. id =  id;
 	}
 	public String getUserpwd() {
-		return userpwd;
+		return password;
 	}
 
-	public void setUserpwd(String userpwd) {
-		this.userpwd = userpwd;
+	public void setUserpwd(String password) {
+		this.password = password;
 	}
 
 	public String getName() {

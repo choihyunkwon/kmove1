@@ -37,7 +37,7 @@
 
 </tr>
 <tr><th>비밀번호 확인</th>
-	<td><input type="password" name="userpwd" 
+	<td><input type="password" name="userpwd2" 
 				onkeyup="validate('userpwd_ck')"/><br>
 		<div class="valid" id="userpwd_ck_status">비밀번호는 영문대,소문자,숫자를 모두 입력하세요</div>
 	</td>
@@ -45,8 +45,9 @@
 
   <tr>
    <td> 성별 </td>
-   <td><input type="radio" name="gender" checked>남
-    <input type="radio" name="gender" checked>여
+   <td>
+   <input type="radio"  name="gender"   value = 'm'/>남
+    <input type="radio"  name="gender"  value = 'w'/>여
    </td>
   </tr>
   

@@ -15,16 +15,23 @@ public class MemberDAO {
 	
 	public int join(MemberDTO dto) {
 		int cnt =0;
-		String sql = "insert into member(name,id,password,gender)"
-				+" values(?,?,?,?)";
+		String sql = "insert into member(name, id, password, gender) values(?,?,?,?)";
+		System.out.println("1");
 		try {
 			ps=conn.prepareStatement(sql);
+			System.out.println(dto.getName());
+			System.out.println(dto.getUserid());
+			System.out.println(dto.getGender());
 			ps.setString(1, dto.getName());
 			ps.setString(2, dto.getUserid());
 			ps.setString(3, dto.getUserpwd());
 			ps.setString(4, dto.getGender());
 			cnt = ps.executeUpdate();
+			System.out.println("작동됨"+cnt);
+			
 		}catch(SQLException e) {
+			System.out.println("작동안됨");
+			
 		} finally {
 			disconnect();
 		}
