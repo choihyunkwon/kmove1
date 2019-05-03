@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -9,7 +11,7 @@
  <body>
  <center>
  <h1> 회원가입 </h1>
- <FORM method="post" action="./join001/Joinpro.jsp">
+ <FORM method="post" action="./Joinpro.jsp">
  <table border="2" bgcolor="wheat"> 
  
   <tr>
@@ -36,15 +38,15 @@
 </tr>
 <tr><th>비밀번호 확인</th>
 	<td><input type="password" name="userpwd" 
-				onkeyup="validate('userpwd')"/><br>
-		<div class="valid" id="userpwd_status">비밀번호는 영문대,소문자,숫자를 모두 입력하세요</div>
+				onkeyup="validate('userpwd_ck')"/><br>
+		<div class="valid" id="userpwd_ck_status">비밀번호는 영문대,소문자,숫자를 모두 입력하세요</div>
 	</td>
 </tr>
 
   <tr>
    <td> 성별 </td>
    <td><input type="radio" name="gender" checked>남
-    	<input type="radio" name="gender" checked>여
+    <input type="radio" name="gender" checked>여
    </td>
   </tr>
   
@@ -54,6 +56,7 @@
    <input type="button" value="취소"/>
    
   </FORM>
+  <script type="text/javascript" src="js/join_check.js"></script>
   
  </center>
  </body>

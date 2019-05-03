@@ -15,8 +15,8 @@ public class MemberDAO {
 	
 	public int join(MemberDTO dto) {
 		int cnt =0;
-		String sql = "insert into member(name,userid,userpwd,gender)"
-				+"values(?,?,?,?)";
+		String sql = "insert into member(name,id,password,gender)"
+				+" values(?,?,?,?)";
 		try {
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, dto.getName());
@@ -90,6 +90,7 @@ public class MemberDAO {
 			conn = DriverManager.getConnection(
 				"jdbc:oracle:thin:@172.16.20.38:1521:xe", "kmove", "1234");
 		}catch(Exception e) {
+			System.out.println("앙됨");
 		}
 	}
 
