@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
 </head>
+<% request.setCharacterEncoding("UTF-8"); %>
 <%
 MemberDAO da = new MemberDAO(); 
 MemberDTO dt = new MemberDTO(); 
