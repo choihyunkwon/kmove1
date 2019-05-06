@@ -27,7 +27,6 @@
 	</td>
 </tr>
   
-  </tr>
 <tr><th>비밀번호</th>
 	<td><input type="password" name="userpwd" 
 				onkeyup="validate('userpwd')"/><br>
@@ -35,7 +34,6 @@
 	</td>
 </tr>
 
-</tr>
 <tr><th>비밀번호 확인</th>
 	<td><input type="password" name="userpwd2" 
 				onkeyup="validate('userpwd_ck')"/><br>
@@ -54,14 +52,10 @@
   </TABLE>
    <input type="submit" value="회원가입"/>
    <input type="reset" value="다시입력"/>
-   <input type="button" value="취소" onclick="/login()"/>
+   <input type="button" value="취소"/>
    
   </FORM>
-  <script type="text/javascript" src="js/join_check.js">
-  	function goLogin() {
-  	  location.href="login.jsp";  	
-  	  }
-  </script>
+  <script type="text/javascript" src="js/join_check.js"></script>
   
  </center>
  </body>
