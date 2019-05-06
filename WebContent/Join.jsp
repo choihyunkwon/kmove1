@@ -27,7 +27,6 @@
 	</td>
 </tr>
   
-  </tr>
 <tr><th>비밀번호</th>
 	<td><input type="password" name="userpwd" 
 				onkeyup="validate('userpwd')"/><br>
@@ -35,7 +34,6 @@
 	</td>
 </tr>
 
-</tr>
 <tr><th>비밀번호 확인</th>
 	<td><input type="password" name="userpwd2" 
 				onkeyup="validate('userpwd_ck')"/><br>
