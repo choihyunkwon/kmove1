@@ -23,10 +23,4 @@ da.join(dt);
 <body>
 회원가입 완료
 </body>
-<input type="button" value="확인" onclick="goLogin()"/>
-<script type="text/javascript">
-  function goLogin() {
-      location.href="login.jsp";
-  }
-  </script>
 </html>

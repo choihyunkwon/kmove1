@@ -6,10 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.kmove.DBConnection;
+
 public class MemberDAO {
 	private Connection conn;
 	private PreparedStatement ps;
 	private ResultSet rs;
+
+
 	
 	//ȸ������ ó�� �޼ҵ�
 	
@@ -57,27 +61,77 @@ public class MemberDAO {
 	
 	public MemberDTO login(String id, String pwd) {
 		MemberDTO dto = null;
-		String sql="select*from member "
-				+"where userid = ? and userpwd = ?";
+		String sql = "select * from member "
+				+ "where id = ? and password = ?";
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, pwd);
-			
 			rs = ps.executeQuery();
-			if(rs.next()) {
+			if( rs.next() ) {
 				//��ġ�ϴ� ȸ�������� ��´�. DTO
-				dto= new MemberDTO();
-				dto.setName(rs.getString("name"));
-				dto.setUserid(rs.getString("userid"));
-				dto.setUserpwd(rs.getString("userpwd"));
+				dto = new MemberDTO();
+				dto.setName( rs.getString("name") );
+				dto.setUserid( rs.getString("userid") );
+				dto.setUserpwd( rs.getString("userpwd") );
 			}
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 		} finally {
 			disconnect();
 		}
 		return dto;
 	}
+	
+	// 로그인시 아이디, 비밀번호 체크 메서드
+    // 아이디, 비밀번호를 인자로 받는다.
+    public int loginCheck(String id, String pw) 
+    {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+ 
+        String dbPW = ""; // db에서 꺼낸 비밀번호를 담을 변수
+        int x = -1;
+ 
+        try {
+            // 쿼리 - 먼저 입력된 아이디로 DB에서 비밀번호를 조회한다.
+            StringBuffer query = new StringBuffer();
+            query.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
+ 
+            conn = DBConnection.getConnection();
+            pstmt = conn.prepareStatement(query.toString());
+            pstmt.setString(1, id);
+            rs = pstmt.executeQuery();
+ 
+            if (rs.next()) // 입려된 아이디에 해당하는 비번 있을경우
+            {
+                dbPW = rs.getString("password"); // 비번을 변수에 넣는다.
+ 
+                if (dbPW.equals(pw)) 
+                    x = 1; // 넘겨받은 비번과 꺼내온 배번 비교. 같으면 인증성공
+                else                  
+                    x = 0; // DB의 비밀번호와 입력받은 비밀번호 다름, 인증실패
+                
+            } else {
+                x = -1; // 해당 아이디가 없을 경우
+            }
+ 
+            return x;
+ 
+        } catch (Exception sqle) {
+            throw new RuntimeException(sqle.getMessage());
+        } finally {
+            try{
+                if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+                if ( conn != null ){ conn.close(); conn=null;    }
+            }catch(Exception e){
+                throw new RuntimeException(e.getMessage());
+            }
+        }
+    } // end loginCheck()
+
+
+
 	
 	private void disconnect() {
 		if( rs!=null ) {
@@ -101,5 +155,12 @@ public class MemberDAO {
 			System.out.println("앙됨");
 		}
 	}
+	
+	  
+
+	
+	  
+
+	
 
 }
