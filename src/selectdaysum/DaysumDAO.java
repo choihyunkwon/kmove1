@@ -1,4 +1,4 @@
-package daysum;
+package selectdaysum;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -38,13 +38,13 @@ public class DaysumDAO{
 				rs = stmt.executeQuery("select * from daysum");
 				
 				while(rs.next()) {
-					String hiredate = rs.getString("hiredate");
+					String insertday = rs.getString("insertday");
 					int plus = rs.getInt("plus");
 					int ma = rs.getInt("ma");
 					int us = rs.getInt("us");
 					int balance = rs.getInt("balance");
 					
-					DaysumDTO dto = new DaysumDTO(hiredate,plus,ma,us,balance);
+					DaysumDTO dto = new DaysumDTO(insertday,plus,ma,us,balance);
 					dtos.add(dto);
 				}
 				

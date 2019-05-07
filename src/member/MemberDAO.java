@@ -38,6 +38,7 @@ public class MemberDAO {
 		return cnt;
 			
 		}
+	
 	public int id_check(String id) {
 		int cnt =0;
 		String sql = "select count(*) cnt from member "

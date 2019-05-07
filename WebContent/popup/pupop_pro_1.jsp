@@ -12,7 +12,7 @@
 PupopDAO da = new PupopDAO(); 
 PupopDTO dt = new PupopDTO(); 
 dt.setDate(request.getParameter("date"));
-dt.setPrice(request.getParameter("price"));
+dt.setPrice(Integer.parseInt(request.getParameter("price")));
 dt.setMember_id(request.getParameter("member_id"));
 
 da.pupop(dt);

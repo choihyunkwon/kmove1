@@ -1,5 +1,5 @@
-<%@page import="daysum.DaysumDTO"%>
-<%@page import="daysum.DaysumDAO"%>
+<%@page import="selectdaysum.DaysumDTO"%>
+<%@page import="selectdaysum.DaysumDAO"%>
 <%@page import="java.util.ArrayList" %>
 
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -29,19 +29,20 @@
 	ArrayList<DaysumDTO> dtos = da.OracleSelect();
 	
 	for(int i=0; i<dtos.size(); i++){
-		DaysumDTO	dto = dtos.get(i);
+		DaysumDTO dto = dtos.get(i);
 %>
 
 <tr align="center">
-<td><%=dto.gethiredate() %></td>
+<td><%=dto.getinsertday() %></td>
 <td><%=dto.getplus() %></td>
 <td><%=dto.getma() %></td>
 <td><%=dto.getus() %></td>
-<td><%=dto.getbalance() %></td>
+<td><%=dto.getbalance()%></td>
 </tr>
 
 <%
-	};
+	}
+	;
 %>
 
 
