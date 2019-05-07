@@ -44,14 +44,9 @@
 %>
 
 
-
-
 </table>
 <div align="center">
 <input type="submit" value="뒤로가기">
 </div>
-
-
-
 </body>
 </html>
