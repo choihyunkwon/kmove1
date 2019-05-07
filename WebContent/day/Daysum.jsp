@@ -11,6 +11,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+
 </head>
 <body>
 <h4 align="center">일별</h4>
