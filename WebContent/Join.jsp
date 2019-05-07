@@ -52,10 +52,14 @@
   </TABLE>
    <input type="submit" value="회원가입"/>
    <input type="reset" value="다시입력"/>
-   <input type="button" value="취소"/>
+   <input type="button" value="취소" onclick="goJoin()"/>
    
   </FORM>
-  <script type="text/javascript" src="js/join_check.js"></script>
+  <script type="text/javascript">
+  function goJoin() {
+	  history.back(-1);
+}
+  </script>
   
  </center>
  </body>
