@@ -23,9 +23,9 @@ div {
 }
 </style>
 <script type ="text/javascript">
-	function gomain() {
+	/* function gomain() {
 	 location.href="main.jsp";
-}
+} */
 	function goJoin() {
 		 location.href="Join.jsp";
 	}
@@ -34,25 +34,28 @@ div {
 </head>
 
 <body>
+	
 	<header>
 	<h2>Cities</h2>
 	</header>
+	
 	<div width="280px" height="300px" align="center">
+	<form action="authentication.jsp" method="post">
 		<legend style="text-align: center;">로그인</legend>
 		<table border="0" width="250px" height="100px">
 			<tr bgcolor="gray">
 				<td align="center"><font size=2 color="black">아이디</font></td>
-				<td><input type="text" name="id" /></td>
+				<td><input type="text" name="userid" /></td>
 			</tr>
 
 			<tr bgcolor="gray">
 				<td align="center"><font size=2 color="black">비밀번호</font></td>
-				<td><input type="text" name="pwd" /></td>
+				<td><input type="password" name="userpwd" /></td>
 			</tr>
 
 			<tr>
 				<td colspan="2" align="center">
-				<input type="submit" value="로그인" onclick="gomain()"/> 
+				<input type="submit" value="로그인""/> 
 					<input type="submit" value="회원가입"onclick="goJoin()"/></td>
 			</tr>
 		</table>
