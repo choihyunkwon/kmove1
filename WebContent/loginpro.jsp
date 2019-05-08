@@ -28,9 +28,10 @@
         { 
         	Integer balance=memberDTO.getBalance();
             // 세션에 현재 아이디 세팅
-            session.setAttribute("sessionID", memberDTO.getUserid());
+            session.setAttribute("id", memberDTO.getUserid());
             session.setAttribute("name", memberDTO.getName());
             session.setAttribute("balance", balance);
+            session.setAttribute("gender",memberDTO.getGender());
             msg = "../join/main.jsp";
 
 

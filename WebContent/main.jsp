@@ -15,6 +15,9 @@ Integer balance = (Integer)session.getAttribute("balance");
 
 
 %>
+<div id="center">
+<a href="./logininfo.jsp">회원정보</a>
+</div>
 <div id="title1">
 <h1>어서오세요  <%= name %>  님 </h1>
 <h2>현재 총 잔액은 <%= balance %> 입니다</h2>
