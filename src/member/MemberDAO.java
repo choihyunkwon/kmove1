@@ -80,12 +80,12 @@ public class MemberDAO {
 			if( rs.next() ) {
 				//��ġ�ϴ� ȸ�������� ��´�. DTO
 				dto = new MemberDTO();
+				System.out.println(rs.getString("gender"));
 				dto.setName( rs.getString("name") );
 				dto.setUserid( rs.getString("id") );
 				dto.setUserpwd( rs.getString("pwd") );
 				dto.setBalance(rs.getInt("balance"));
 				dto.setGender(rs.getString("gender"));
-				System.out.println("가저온값="+rs.getString("gender"));
 			}
 		} catch (SQLException e) {
 		} finally {
