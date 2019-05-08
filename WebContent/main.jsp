@@ -1,3 +1,5 @@
+<%@page import="member.MemberDTO"%>
+<%@page import="member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,23 +19,18 @@
 </script>
 </head>
 <body>
-<%
-String name = (String)session.getAttribute("name");
-Integer balance = (Integer)session.getAttribute("balance");
-String gender=(String)session.getAttribute("gender");
-String userID = null;
-if(session.getAttribute("userID")!=null) {
-	userID = (String) session.getAttribute("userID");
-}
+<% 
+String id=session.getAttribute("id").toString();
+MemberDAO dao= MemberDAO.getInstance();
+MemberDTO memberDTO = dao.getUserInfo(id);
+%> 
 
-%>
 <div id="center">
 <a href="./logininfo.jsp">회원정보</a>
 </div>
 <div id="title1">
-<h1>어서오세요  <%= name %>  님 </h1>
-<h2>현재 총 잔액은 <%= balance %> 입니다</h2>
-성별:<%=gender %>
+<h1>어서오세요  <%=memberDTO.getName() %>  님 </h1>
+<h2>현재 총 잔액은 <%=memberDTO.getBalance()%> 입니다</h2>
 </div>
 <hr>
 <div id="write1">
@@ -44,32 +41,8 @@ if(session.getAttribute("userID")!=null) {
 <div id="button1">
 <input type="submit" value="가계부 작성"/> 　<input type="submit" value="잔액충전"/>
 <input type="button" value="로그아웃" onclick="logoutpro()"/>
+
 </div>
-<%
-if(userID == null) {
-%>
-<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle"
-data-toggle="dropdown" role="button" aria-haspopup="true"
-aria-expanded="false">접속하기<span class="caret"></span></a>
-<ul class="dropdown-menu">
-<li> <a href="login.jsp">로그인</a></li>
-<li> <a href="Join.jsp">회원가입</a></li>
-</ul>
-</li>
-</ul>
 
-<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle"
-data-toggle="dropdown" role="button" aria-haspopup="true"
-aria=expanded="false">회원관리<span class="caret"></span></a>
-<ul class="dropdown-menu">
-<li> <a href="logoutpro.jsp">로그아웃</a></li>
-</ul>
-</li>
-
-</ul>
 </body>
 </html>
