@@ -15,11 +15,7 @@ header {
 }
 
 div {
-	width: 1000px;
-	height: 1000px;
-	padding-left: 450px;
-	margin-top: 38px;
-	position: absolute;
+	max-width: 100%
 }
 </style>
 <script type ="text/javascript">
@@ -29,9 +25,10 @@ div {
 	function goJoin() {
 		 location.href="./Join.jsp";
 	}
-function logincheck() {
-	 location.href="./logincheck.jsp";
+function loginpro() {
+	 location.href="./loginpro.jsp";
 }
+
 
 </script>
 </head>
