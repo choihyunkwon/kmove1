@@ -19,6 +19,7 @@ dt.setUserpwd(request.getParameter("userpwd"));
 dt.setGender(request.getParameter("gender"));
 dt.setBalance(0);
 
+
 da.join(dt);
 %>
 <body>
