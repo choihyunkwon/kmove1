@@ -81,8 +81,8 @@
   <tr>
    <td> 성별 </td>
    <td>
-   <input type="radio"  name="gender"   value = "남"/>남
-    <input type="radio"  name="gender"  value = "여"/>여
+   <input type="radio"  name="gender"   value = 'm'/>남
+    <input type="radio"  name="gender"  value = 'w'/>여
    </td>
   </tr>
   
