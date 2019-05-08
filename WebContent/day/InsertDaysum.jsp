@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- 
       <form method = "post" action ="./InsertDaysumpro.jsp">
 	아이디 : <input type = "date" name="insertday" ><p>
 	입금 : <input type ="text" name ="plus" placeholder="0 " value="0"><p>

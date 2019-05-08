@@ -35,7 +35,7 @@ public class DaysumDAO{
 		try {
 				con = DriverManager.getConnection(url,user,pass);
 				stmt = con.createStatement();
-				rs = stmt.executeQuery("select * from daysum");
+				rs = stmt.executeQuery("select insertday, plus,ma,us,balance from daysum");
 				
 				while(rs.next()) {
 					String insertday = rs.getString("insertday");

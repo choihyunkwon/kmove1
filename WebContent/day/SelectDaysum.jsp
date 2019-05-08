@@ -30,6 +30,7 @@
 	
 	for(int i=0; i<dtos.size(); i++){
 		DaysumDTO dto = dtos.get(i);
+
 %>
 
 <tr align="center">
