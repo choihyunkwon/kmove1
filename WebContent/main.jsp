@@ -1,5 +1,3 @@
-<%@page import="member.MemberDTO"%>
-<%@page import="member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,17 +17,20 @@
 </script>
 </head>
 <body>
-<% 
-String id=session.getAttribute("id").toString();
-MemberDAO dao= MemberDAO.getInstance();
-MemberDTO memberDTO = dao.getUserInfo(id);
+<%
+String name = (String)session.getAttribute("name");
+Integer balance = (Integer)session.getAttribute("balance");
+String gender=(String)session.getAttribute("gender");
+
+
 %>
 <div id="center">
 <a href="./logininfo.jsp">회원정보</a>
 </div>
 <div id="title1">
-<h1>어서오세요  <%=memberDTO.getName() %>  님 </h1>
-<h2>현재 총 잔액은 <%=memberDTO.getBalance()%> 입니다</h2>
+<h1>어서오세요  <%= name %>  님 </h1>
+<h2>현재 총 잔액은 <%= balance %> 입니다</h2>
+성별:<%=gender %>
 </div>
 <hr>
 <div id="write1">
