@@ -9,10 +9,12 @@
 
 <script type="text/javascript">
 	function logoutpro() {
-		location.href="./logoutpro.jsp";
+		if(window.confirm("로그아웃 하시겠습니까")) //alert창 띄우기
+			{
+		window.location.href="./logoutpro.jsp";
+	}
 	}
 </script>
-
 </head>
 <body>
 <%
@@ -38,7 +40,8 @@ String gender=(String)session.getAttribute("gender");
 </div>
 <div id="button1">
 <input type="submit" value="가계부 작성"/> 　<input type="submit" value="잔액충전"/>
-	<input type="button" value="로그아웃" onclick="logoutpro()"/>
+<input type="button" value="로그아웃" onclick="logoutpro()"/>
+
 </div>
 
 </body>
