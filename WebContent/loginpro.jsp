@@ -30,10 +30,6 @@
         	String gender=memberDTO.getGender();
             // 세션에 현재 아이디 세팅
             session.setAttribute("id", memberDTO.getUserid());
-            session.setAttribute("name", memberDTO.getName());
-            session.setAttribute("balance", balance);
-            session.setAttribute("gender", gender);
-            System.out.println(gender);
             msg = "../join/main.jsp";
 
 
@@ -47,7 +43,6 @@
         // sendRedirect(String URL) : 해당 URL로 이동
         // URL뒤에 get방식 처럼 데이터를 전달가능
         response.sendRedirect(msg);
-        dao.login(id,pw);  
        
     %>
 
