@@ -28,9 +28,10 @@
         { 
         	Integer balance=memberDTO.getBalance();
             // 세션에 현재 아이디 세팅
-            session.setAttribute("sessionID", memberDTO.getUserid());
+            session.setAttribute("id", memberDTO.getUserid());
             session.setAttribute("name", memberDTO.getName());
             session.setAttribute("balance", balance);
+            session.setAttribute("gender", memberDTO.getGender());
             msg = "../join/main.jsp";
 
 
@@ -44,6 +45,9 @@
         // sendRedirect(String URL) : 해당 URL로 이동
         // URL뒤에 get방식 처럼 데이터를 전달가능
         response.sendRedirect(msg);
+        
+        System.out.println(memberDTO.getGender());
+        System.out.println(memberDTO.getName());
     %>
 
 
