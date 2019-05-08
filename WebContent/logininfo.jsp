@@ -14,7 +14,7 @@
 	 location.href="main.jsp";
 } */
 	function main() {
-		 location.href="./main.jsp";
+		 location.href="./main.jsp";  
 
 }
 

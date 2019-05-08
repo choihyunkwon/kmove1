@@ -141,7 +141,7 @@ public class MemberDAO {
     } // end loginCheck()
 
 
-
+  
     public MemberDTO getUserInfo(String id) {
     	Connection conn = null;
         PreparedStatement pstmt = null;
