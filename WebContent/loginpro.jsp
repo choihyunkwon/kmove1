@@ -30,10 +30,7 @@
         	String gender=memberDTO.getGender();
             // 세션에 현재 아이디 세팅
             session.setAttribute("id", memberDTO.getUserid());
-            session.setAttribute("name", memberDTO.getName());
-            session.setAttribute("balance", balance);
-            session.setAttribute("gender", gender);
-            System.out.println(gender);
+            session.setAttribute("pw", memberDTO.getUserpwd());;
             msg = "../join/main.jsp";
 
 
