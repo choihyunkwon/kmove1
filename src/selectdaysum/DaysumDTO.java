@@ -1,15 +1,15 @@
-package daysum;
+package selectdaysum;
 
 import java.sql.Date;
 
 public class DaysumDTO {
 	
 
-    private String hiredate;
+    private String insertday;
     private int plus,ma,us,balance;
 
-    public DaysumDTO(String hiredate,int plus,int ma,int us,int balance) {
-    	this.hiredate = hiredate;
+    public DaysumDTO(String insertday,int plus,int ma,int us,int balance) {
+    	this.insertday = insertday;
     	this.plus = plus;
     	this.ma = ma;
     	this.us = us;
@@ -18,12 +18,12 @@ public class DaysumDTO {
     
     
     
-    public String gethiredate() {
-        return hiredate;
+    public String getinsertday() {
+        return insertday;
     }
 
-    public void sethiredate(String hiredate) {
-        this.hiredate = hiredate;
+    public void setinsertday(String insertday) {
+        this.insertday = insertday;
     }
     
 
@@ -36,7 +36,7 @@ public class DaysumDTO {
     }
     
     public int getma() {
-        return plus;
+        return ma;
     }
 
     public void setma(int ma) {
