@@ -12,6 +12,14 @@ public class MemberDAO {
 	private Connection conn;
 	private PreparedStatement ps;
 	private ResultSet rs;
+	private static MemberDAO instance;
+	    
+	    // 싱글톤 패턴
+	    public static MemberDAO getInstance(){
+	        if(instance==null)
+	            instance=new MemberDAO();
+	        return instance;
+	    }
 
 
 	
@@ -19,7 +27,7 @@ public class MemberDAO {
 	
 	public int join(MemberDTO dto) {
 		int cnt =0;
-		String sql = "insert into member(name, id, password, gender) values(?,?,?,?)";
+		String sql = "insert into member(name, id, password, gender,balance) values(?,?,?,?,?)";
 		System.out.println("1");
 		try {
 			ps=conn.prepareStatement(sql);
@@ -30,6 +38,7 @@ public class MemberDAO {
 			ps.setString(2, dto.getUserid());
 			ps.setString(3, dto.getUserpwd());
 			ps.setString(4, dto.getGender());
+			ps.setInt(5, dto.getBalance());
 			cnt = ps.executeUpdate();
 			System.out.println("작동됨"+cnt);
 			
@@ -74,6 +83,7 @@ public class MemberDAO {
 				dto.setName( rs.getString("name") );
 				dto.setUserid( rs.getString("userid") );
 				dto.setUserpwd( rs.getString("userpwd") );
+				dto.setBalance(rs.getInt("balance"));
 			}
 		} catch (SQLException e) {
 		} finally {
@@ -95,12 +105,14 @@ public class MemberDAO {
  
         try {
             // 쿼리 - 먼저 입력된 아이디로 DB에서 비밀번호를 조회한다.
-            StringBuffer query = new StringBuffer();
-            query.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
+           StringBuffer query = new StringBuffer();
+            query.append("select * from member where id=? and password=?");
+ //           query.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
  
             conn = DBConnection.getConnection();
             pstmt = conn.prepareStatement(query.toString());
             pstmt.setString(1, id);
+            pstmt.setString(2, pw);
             rs = pstmt.executeQuery();
  
             if (rs.next()) // 입려된 아이디에 해당하는 비번 있을경우
@@ -113,7 +125,7 @@ public class MemberDAO {
                     x = 0; // DB의 비밀번호와 입력받은 비밀번호 다름, 인증실패
                 
             } else {
-                x = -1; // 해당 아이디가 없을 경우
+                x = -1;// 해당 아이디가 비밀번호가 없을 경우
             }
  
             return x;

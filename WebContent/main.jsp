@@ -9,9 +9,15 @@
 
 </head>
 <body>
+<%
+String name = (String)session.getAttribute("name");
+Integer balance = (Integer)session.getAttribute("balance");
+
+
+%>
 <div id="title1">
-<h1>어서오세요  </h1>
-<h2>현재 총 잔액은 </h2>
+<h1>어서오세요  <%= name %>  님 </h1>
+<h2>현재 총 잔액은 <%= balance %> 입니다</h2>
 </div>
 <hr>
 <div id="write1">

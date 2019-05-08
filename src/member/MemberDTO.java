@@ -2,6 +2,7 @@ package member;
 
 public class MemberDTO {
 	private String id, password, name, gender;
+	private int balance;
 	
 	public String getUserid() {
 		return  id;
@@ -29,6 +30,13 @@ public class MemberDTO {
 	}
 	public void setGender(String gender) {
 		this.gender=gender;
+	}
+	public int getBalance() {
+		return balance;
+		
+	}
+	public void setBalance(int balance) {
+		this.balance=balance;
 	}
 	
 }
