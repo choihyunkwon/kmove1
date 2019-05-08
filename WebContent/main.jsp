@@ -15,7 +15,7 @@
 			{
 		window.location.href="./logoutpro.jsp";
 	}
-	}
+	}	
 </script>
 </head>
 <body>
@@ -23,7 +23,8 @@
 String id=session.getAttribute("id").toString();
 MemberDAO dao= MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
-%> 
+
+%> 	
 
 <div id="center">
 <a href="./logininfo.jsp">회원정보</a>
