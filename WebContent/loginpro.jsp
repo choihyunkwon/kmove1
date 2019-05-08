@@ -47,7 +47,7 @@
         // sendRedirect(String URL) : 해당 URL로 이동
         // URL뒤에 get방식 처럼 데이터를 전달가능
         response.sendRedirect(msg);
-        dao.login(id,pw);  
+        dao.login(id,pw);
        
     %>
 

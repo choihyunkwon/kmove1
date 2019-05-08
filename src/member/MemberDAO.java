@@ -80,8 +80,12 @@ public class MemberDAO {
 			if( rs.next() ) {
 				//��ġ�ϴ� ȸ�������� ��´�. DTO
 				dto = new MemberDTO();
+				System.out.println(rs.getString("gender"));
+				dto.setName( rs.getString("name") );
 				dto.setUserid( rs.getString("id") );
 				dto.setUserpwd( rs.getString("pwd") );
+				dto.setBalance(rs.getInt("balance"));
+				dto.setGender(rs.getString("gender"));
 			}
 		} catch (SQLException e) {
 		} finally {
@@ -141,51 +145,7 @@ public class MemberDAO {
     } // end loginCheck()
 
 
-  
-    public MemberDTO getUserInfo(String id) {
-    	Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        MemberDTO member = null;
- 
-        try {
-            // 쿼리
-            StringBuffer query = new StringBuffer();
-            query.append("SELECT * FROM MEMBER WHERE ID=?");
- 
-            conn = DBConnection.getConnection();
-            pstmt = conn.prepareStatement(query.toString());
-            pstmt.setString(1, id);
-            rs = pstmt.executeQuery();
- 
-            if (rs.next()) // 회원정보를 DTO에 담는다.
-            {
-                
-                // 자바빈에 정보를 담는다.
-                member = new MemberDTO();
-                member.setUserid(rs.getString("id"));
-                member.setUserpwd(rs.getString("password"));
-                member.setName(rs.getString("name"));
-                member.setGender(rs.getString("gender"));
-            }
- 
-            return member;
- 
-        } catch (Exception sqle) {
-            throw new RuntimeException(sqle.getMessage());
-        } finally {
-            // Connection, PreparedStatement를 닫는다.
-            try{
-                if ( pstmt != null ){ pstmt.close(); pstmt=null; }
-                if ( conn != null ){ conn.close(); conn=null;    }
-            }catch(Exception e){
-                throw new RuntimeException(e.getMessage());
-            }
-        }
 
-    }
-    
-    
 	
 	private void disconnect() {
 		if( rs!=null ) {
@@ -209,8 +169,6 @@ public class MemberDAO {
 			System.out.println("앙됨");
 		}
 	}
-	
-	
 	
 	  
 
