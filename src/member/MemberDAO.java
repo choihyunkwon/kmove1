@@ -81,9 +81,11 @@ public class MemberDAO {
 				//��ġ�ϴ� ȸ�������� ��´�. DTO
 				dto = new MemberDTO();
 				dto.setName( rs.getString("name") );
-				dto.setUserid( rs.getString("userid") );
-				dto.setUserpwd( rs.getString("userpwd") );
+				dto.setUserid( rs.getString("id") );
+				dto.setUserpwd( rs.getString("pwd") );
 				dto.setBalance(rs.getInt("balance"));
+				dto.setGender(rs.getString("gender"));
+				System.out.println("가저온값="+rs.getString("gender"));
 			}
 		} catch (SQLException e) {
 		} finally {
@@ -162,7 +164,7 @@ public class MemberDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(
 				"jdbc:oracle:thin:@172.16.20.38:1521:xe", "kmpro", "1234");
-			System.out.println("작동됨");
+	
 		}catch(Exception e) {
 			System.out.println("앙됨");
 		}

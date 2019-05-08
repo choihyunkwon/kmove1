@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="UTF-8">
-<title>·Î±×ÀÎÃ¢</title>
+<title>ë¡œê·¸ì¸ì°½</title>
 <style>
 header {
 	background-color: #666; padding : 30px;
@@ -41,38 +41,38 @@ function loginpro() {
 	
 	<div width="280px" height="300px" align="center">
 	<form action="loginpro.jsp" method="post">
-		<legend style="text-align: center;">·Î±×ÀÎ</legend>
+		<legend style="text-align: center;">ë¡œê·¸ì¸</legend>
 		<table border="0" width="250px" height="100px">
 			<tr bgcolor="gray">
-				<td align="center"><font size=2 color="black">¾ÆÀÌµğ</font></td>
+				<td align="center"><font size=2 color="black">ì•„ì´ë””</font></td>
 				<td><input type="text" name="userid" /></td>
 			</tr>
 
 			<tr bgcolor="gray">
-				<td align="center"><font size=2 color="black">ºñ¹Ğ¹øÈ£</font></td>
+				<td align="center"><font size=2 color="black">ë¹„ë°€ë²ˆí˜¸</font></td>
 				<td><input type="password" name="userpwd" /></td>
 			</tr>
 
 			<tr>
 				<td colspan="2" align="center">
-				<input type="submit" value="·Î±×ÀÎ"/> 
-					<input type="button" value="È¸¿ø°¡ÀÔ"onclick="goJoin()"/></td>
+				<input type="submit" value="ë¡œê·¸ì¸"/> 
+					<input type="button" value="íšŒì›ê°€ì…"onclick="goJoin()"/></td>
 			</tr>
 		</table>
 		<% 
-            // ¾ÆÀÌµğ, ºñ¹Ğ¹øÈ£°¡ Æ²¸±°æ¿ì È­¸é¿¡ ¸Ş½ÃÁö Ç¥½Ã
-            // LoginPro.jsp¿¡¼­ ·Î±×ÀÎ Ã³¸® °á°ú¿¡ µû¸¥ ¸Ş½ÃÁö¸¦ º¸³½´Ù.
+            // ì•„ì´ë””, ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦´ê²½ìš° í™”ë©´ì— ë©”ì‹œì§€ í‘œì‹œ
+            // LoginPro.jspì—ì„œ ë¡œê·¸ì¸ ì²˜ë¦¬ ê²°ê³¼ì— ë”°ë¥¸ ë©”ì‹œì§€ë¥¼ ë³´ë‚¸ë‹¤.
             String msg=request.getParameter("msg");
             
             if(msg!=null && msg.equals("0")) 
             {
                 out.println("<br>");
-                out.println("<font color='red' size='5'>±è¼¼È£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä.</font>");
+                out.println("<font color='red' size='5'>ê¹€ì„¸í˜¸ë¥¼ í™•ì¸í•´ ì£¼ì„¸ìš”.</font>");
             }
             else if(msg!=null && msg.equals("-1"))
             {    
                 out.println("<br>");
-                out.println("<font color='red' size='5'>¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä.</font>");
+                out.println("<font color='red' size='5'>ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ ì£¼ì„¸ìš”.</font>");
             }
         %>  
 
