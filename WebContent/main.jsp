@@ -19,14 +19,14 @@
 </script>
 </head>
 <body>
-<%
+<% 
         String id = session.getAttribute("id").toString();
         
         // 세션에 저장된 아이디를 가져와서
         // 그 아이디 해당하는 회원정보를 가져온다.
         MemberDAO dao = MemberDAO.getInstance();
         MemberDTO memberDTO = dao.getUserInfo(id);
-    %>
+        %>
 
 
 <div id="center">
@@ -46,28 +46,6 @@
 <input type="submit" value="가계부 작성"/> 　<input type="submit" value="잔액충전"/>
 <input type="button" value="로그아웃" onclick="logoutpro()"/>
 </div>
-<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle"
-data-toggle="dropdown" role="button" aria-haspopup="true"
-aria-expanded="false">접속하기<span class="caret"></span></a>
-<ul class="dropdown-menu">
-<li> <a href="login.jsp">로그인</a></li>
-<li> <a href="Join.jsp">회원가입</a></li>
-</ul>
-</li>
-</ul>
 
-<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a href="#" class="dropdown-toggle"
-data-toggle="dropdown" role="button" aria-haspopup="true"
-aria=expanded="false">회원관리<span class="caret"></span></a>
-<ul class="dropdown-menu">
-<li> <a href="logoutpro.jsp">로그아웃</a></li>
-</ul>
-</li>
-
-</ul>
 </body>
 </html>
