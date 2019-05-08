@@ -8,24 +8,40 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title> 회원가입 </title>
   <script type="text/javascript">
-    function checkValue()
-        {
-            if(!document.userInfo.id.value){
-                alert("아이디를 입력하세요.");
-                return false;
-            }
-            
-            if(!document.userInfo.password.value){
-                alert("비밀번호를 입력하세요.");
-                return false;
-            }
-            
-            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
-                alert("비밀번호를 동일하게 입력하세요.");
-                return false;
-            }
-        }
+  function checkValue()
+  {
+      var form = document.userInfo;
+  
+      if(!form.id.value){
+          alert("아이디를 입력하세요.");
+          return false;
+      }
+      if(form.idDuplication.value != "idCheck"){
+          alert("아이디 중복체크를 해주세요.");
+          return false;
+      }
+      if(!form.password.value){
+          alert("비밀번호를 입력하세요.");
+          return false;
+      }
+      // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+      if(form.password.value != form.passwordcheck.value ){
+          alert("비밀번호를 동일하게 입력하세요.");
+          return false;
+      }    
+      if(!form.name.value){
+          alert("이름을 입력하세요.");
+		  return false;
+	  }
+}
+  function openIdChk(){
+      
+      window.name = "parentForm";
+      window.open("IdCheckForm.jsp", "chkForm", "width=500, height=300, resizable = no, scrollbars = no");    
+  }
+  function inputIdChk(){
+      document.userInfo.idDuplication.value ="idUncheck";
+  }
     </script>
  </head>
  <body>
@@ -41,9 +57,9 @@
   </tr>
   
 <tr><th>아이디</th>
-	<td><input type="text" name="userid" 
-		onkeyup="if( event.keyCode==13 ){ usable(); }else{ $('#id_check').val('n'); validate('userid') }"/>
-		<input id="btn_id" type="button" value="중복확인" onclick="usable()"/><br>
+	<td><input type="text" name="userid" maxlength="50" onkeydown="inputIdChk()"/>
+		<input type="button" value="중복확인" onclick="openIdChk()"/>
+		<input type="hidden" name="idDuplication" value="idUncheck">
 		<div class="valid" id="userid_status">아이디는 영문소문자,숫자만 입력하세요</div>
 	</td>
 </tr>
