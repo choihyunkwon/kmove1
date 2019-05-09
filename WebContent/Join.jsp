@@ -51,8 +51,7 @@
   onsubmit="return checkValue()" name = "userInfo">
  <table border="2" bgcolor="wheat"> 
  
-  <tr>
-   <td> 이름 </td>
+  <tr><th> 이름 </th>
    <td><input type="text" name="name"/></td>
   </tr>
   
@@ -78,8 +77,7 @@
 	</td>
 </tr>
 
-  <tr>
-   <td> 성별 </td>
+  <tr><th> 성별 </th>
    <td>
    <input type="radio"  name="gender"   value = "남"/>남
     <input type="radio"  name="gender"  value = "여"/>여
