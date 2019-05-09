@@ -18,8 +18,8 @@
 <table border="1" align="center" style="width:80%; heigh:450px" >
 <tr align="center">
 <th>사용일자</th>
-<th>입금</th>
-<th>아이디</th>
+<th>입 금</th>
+<th>성 명</th>
 
 </tr>
 
@@ -29,8 +29,12 @@
 	
 	for(int i=0; i<dtos.size(); i++){
 		SelectImportDTO dto = dtos.get(i);
-
 		
+	String id = session.getAttribute("id").toString();
+	MemberDAO dao = MemberDAO.getInstance();
+	MemberDTO memberDTO = dao.getUserInfo(id);
+	
+	if(memberDTO.getName().equals(dto.getmember_id())){
 %>
 
 <tr align="center">
@@ -40,7 +44,7 @@
 </tr>
 
 <%
-	}
+	}}
 	;
 %>
 
