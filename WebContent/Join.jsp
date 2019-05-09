@@ -16,6 +16,7 @@
           alert("아이디를 입력하세요.");
           return false;
       }
+
       if(form.idDuplication.value != "idCheck"){
           alert("아이디 중복체크를 해주세요.");
           return false;
@@ -56,7 +57,7 @@
   </tr>
   
 <tr><th>아이디</th>
-	<td><input type="text" name="userid" maxlength="50" onkeydown="inputIdChk()"/>
+	<td><input type="text" name="userid" maxlength="20" onkeydown="inputIdChk()"/>
 		<input type="button" value="중복확인" onclick="openIdChk()"/>
 		<input type="hidden" name="idDuplication" value="idUncheck">
 		<div class="valid" id="userid_status">아이디는 영문소문자,숫자만 입력하세요</div>
@@ -65,14 +66,14 @@
   
 <tr><th>비밀번호</th>
 	<td><input type="password" name="userpwd" 
-				onkeyup="validate('userpwd')" maxlength="50"/><br>
+				onkeyup="validate('userpwd')" maxlength="26"/><br>
 		<div class="valid" id="userpwd_status">비밀번호는 영문대,소문자,숫자를 모두 입력하세요</div>
 	</td>
 </tr>
 
 <tr><th>비밀번호 확인</th>
 	<td><input type="password" name="userpwd2" 
-				onkeyup="validate('userpwd_ck')" maxlength="50"/><br>
+				onkeyup="validate('userpwd_ck')" maxlength="26"/><br>
 		<div class="valid" id="userpwd_ck_status">비밀번호는 영문대,소문자,숫자를 모두 입력하세요</div>
 	</td>
 </tr>

@@ -68,6 +68,10 @@
                 alert("한글 및 특수문자는 아이디로 사용하실 수 없습니다.");
                 return false;
             }
+            else if(id.length<4 || id.length>20){
+            	alert("4자 이상 20자 이하로 하세요. 한글 및 특수문자는 아이디로 사용하실 수 없습니다.");
+            	
+            }
             else
             {
                 var param="userid="+id
