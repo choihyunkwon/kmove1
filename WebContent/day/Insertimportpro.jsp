@@ -18,22 +18,19 @@ String member_id = request.getParameter("member_id");
 
 String id = session.getAttribute("id").toString();
 
+InsertimportDTO dto = new InsertimportDTO();
+
 MemberDAO dao = MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
 
 
-InsertimportDTO dto = new InsertimportDTO();
-
-if(id.equals(dto.getmember_id())){
 dto.setcomedate(comedate);
 dto.setcomemoney(comemoney);
-dto.setmember_id(id);
+dto.setmember_id(memberDTO.getName());
 
-}
 
 InsertimportDAO da = InsertimportDAO.getInstance();
 da.insert(dto);
-
 %>
 <body>
 입력완료
