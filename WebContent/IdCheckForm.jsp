@@ -52,7 +52,7 @@
         
         // 회원가입창의 아이디 입력란의 값을 가져온다.
         function pValue(){
-            document.getElementById("userId").value = opener.document.userInfo.id.value;
+            document.getElementById("userId").value = opener.document.userInfo.userid.value;
         }
         
         // 아이디 중복체크
@@ -70,26 +70,26 @@
             }
             else
             {
-                var param="id="+id
+                var param="userid="+id
                 httpRequest = getXMLHttpRequest();
                 httpRequest.onreadystatechange = callback;
-                httpRequest.open("POST", "MemberIdCheckAction.do", true);    
+                httpRequest.open("POST", "IdCheck.jsp", true);    
                 httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
                 httpRequest.send(param);
             }
         }
         
         function callback(){
+        	
             if(httpRequest.readyState == 4){
                 // 결과값을 가져온다.
                 var resultText = httpRequest.responseText;
-                if(resultText == 0){
-                    alert("사용할수없는 아이디입니다.");
+                if(resultText == 1){
                     document.getElementById("cancelBtn").style.visibility='visible';
                     document.getElementById("useBtn").style.visibility='hidden';
-                    document.getElementById("msg").innerHTML ="";
+                    document.getElementById("msg").innerHTML ="사용할수없는 아이디입니다.";
                 } 
-                else if(resultText == 1){ 
+                else if(resultText == 0){
                     document.getElementById("cancelBtn").style.visibility='hidden';
                     document.getElementById("useBtn").style.visibility='visible';
                     document.getElementById("msg").innerHTML = "사용 가능한 아이디입니다.";
@@ -102,7 +102,7 @@
             // 중복체크 결과인 idCheck 값을 전달한다.
             opener.document.userInfo.idDuplication.value ="idCheck";
             // 회원가입 화면의 ID입력란에 값을 전달
-            opener.document.userInfo.id.value = document.getElementById("userId").value;
+            opener.document.userInfo.userid.value = document.getElementById("userId").value;
             
             if (opener != null) {
                 opener.chkForm = null;
