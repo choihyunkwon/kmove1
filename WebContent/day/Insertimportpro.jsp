@@ -18,8 +18,9 @@ String member_id = request.getParameter("member_id");
 
 String id = session.getAttribute("id").toString();
 
-// 세션에 저장된 아이디를 가져와서
-// 그 아이디 해당하는 회원정보를 가져온다.
+MemberDAO dao = MemberDAO.getInstance();
+MemberDTO memberDTO = dao.getUserInfo(id);
+
 
 InsertimportDTO dto = new InsertimportDTO();
 
