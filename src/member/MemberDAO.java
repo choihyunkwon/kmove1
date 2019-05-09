@@ -221,6 +221,78 @@ public class MemberDAO {
         }
     } // end duplicateIdCheck()
 	
+    @SuppressWarnings("resource")
+	public int deleteMember(String id, String pw) 
+    {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+ 
+        String dbpw = ""; // DB상의 비밀번호를 담아둘 변수
+        int x = -1;
+ 
+        try {
+            // 비밀번호 조회
+            StringBuffer query1 = new StringBuffer();
+            query1.append("SELECT PASSWORD FROM MEMBER WHERE ID=?");
+ 
+            // 회원 삭제
+            StringBuffer query2 = new StringBuffer();
+            query2.append("DELETE FROM MEMBER WHERE ID=?");
+ 
+            conn = DBConnection.getConnection();
+ 
+            // 자동 커밋을 false로 한다.
+            conn.setAutoCommit(false);
+            
+            // 1. 아이디에 해당하는 비밀번호를 조회한다.
+            pstmt = conn.prepareStatement(query1.toString());
+            pstmt.setString(1, id);
+            rs = pstmt.executeQuery();
+ 
+            if (rs.next()) 
+            {
+                dbpw = rs.getString("password");
+                if (dbpw.equals(pw)) // 입력된 비밀번호와 DB비번 비교
+                {
+                	System.out.println(pw);
+                	System.out.println(dbpw);
+                    // 같을경우 회원삭제 진행
+                    pstmt = conn.prepareStatement(query2.toString());
+                    pstmt.setString(1, id);
+                    pstmt.executeUpdate();
+                    conn.commit(); 
+                    x = 1; // 삭제 성공
+                } else {
+                    x = 0; // 비밀번호 비교결과 - 다름
+                }
+            }
+ 
+            return x;
+ 
+        } catch (Exception sqle) {
+            try {
+                conn.rollback(); // 오류시 롤백
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println(e);
+            }
+            throw new RuntimeException(sqle.getMessage());
+        } finally {
+            try{
+                if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+                if ( conn != null ){ conn.close(); conn=null;    }
+            }catch(Exception e){
+            	System.out.println(e);
+                throw new RuntimeException(e.getMessage());
+                
+            }
+        }
+    } // end deleteMember
+
+
+    
+    
 	private void disconnect() {
 		if( rs!=null ) {
 			try{ rs.close(); }catch(Exception e) {}
@@ -240,7 +312,6 @@ public class MemberDAO {
 				"jdbc:oracle:thin:@172.16.20.38:1521:xe", "kmpro", "1234");
 	
 		}catch(Exception e) {
-			System.out.println("�븰�맖");
 		}
 	}
 	
