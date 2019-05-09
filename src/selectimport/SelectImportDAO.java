@@ -41,8 +41,9 @@ public class SelectImportDAO{
 					String comedate = rs.getString("comedate");
 					int comemoney = rs.getInt("comemoney");
 					String member_id = rs.getString("member_id");
+					int import_balance = rs.getInt("import_balance");
 					
-					SelectImportDTO dto = new SelectImportDTO(comedate,comemoney,member_id);
+					SelectImportDTO dto = new SelectImportDTO(comedate,comemoney,member_id,import_balance);
 					dtos.add(dto);
 				}
 				

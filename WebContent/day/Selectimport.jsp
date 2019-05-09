@@ -20,6 +20,7 @@
 <th>사용일자</th>
 <th>입 금</th>
 <th>성 명</th>
+<th>잔 액</th>
 
 </tr>
 
@@ -41,10 +42,12 @@
 <td><%=dto.getComedate() %></td>
 <td><%=dto.getComemoney() %></td>
 <td><%=dto.getmember_id()%></td>
+<%-- <td><%=dto.getimport_balance()%></td>--%>
 </tr>
 
 <%
-	}}
+	}
+	}
 	;
 %>
 

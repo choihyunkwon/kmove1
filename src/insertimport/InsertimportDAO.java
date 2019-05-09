@@ -29,6 +29,7 @@ public class InsertimportDAO {
 			ps.setString(1, dto.getcomedate());
 			ps.setInt(2, dto.getcomemoney());
 			ps.setString(3, dto.getmember_id());
+		//	ps.setInt(4, dto.getimport_balance()); 잔액
 			// 쿼리 수행
 			ps.executeUpdate();
 		} catch (Exception e) {
@@ -42,4 +43,8 @@ public class InsertimportDAO {
 			}
 		}
 	}
+	
+
 }
+	
+	
