@@ -22,8 +22,7 @@ public class MemberDAO {
 	    }
 
 
-	
-	//회占쏙옙占쏙옙占쏙옙 처占쏙옙 占쌨소듸옙
+
 	
 	public int join(MemberDTO dto) {
 		int cnt =0;
@@ -143,6 +142,50 @@ public class MemberDAO {
             }
         }
     } // end loginCheck()
+    public MemberDTO getUserInfo(String id)
+    {
+         Connection conn = null;
+         PreparedStatement pstmt = null;
+         ResultSet rs = null;
+         MemberDTO member = null;
+
+         try {
+             // 쿼리
+             StringBuffer query = new StringBuffer();
+             query.append("SELECT * FROM MEMBER WHERE ID=?");
+
+             conn = DBConnection.getConnection();
+             pstmt = conn.prepareStatement(query.toString());
+             pstmt.setString(1, id);
+             rs = pstmt.executeQuery();
+
+             if (rs.next()) // 회원정보를 DTO에 담는다.
+             {
+                 
+                 // 자바빈에 정보를 담는다.
+                 member = new MemberDTO();
+                 member.setUserid(rs.getString("id"));
+                 member.setUserpwd(rs.getString("password"));
+                 member.setName(rs.getString("name"));
+                 member.setGender(rs.getString("gender"));
+             }
+
+             return member;
+
+         } catch (Exception sqle) {
+             throw new RuntimeException(sqle.getMessage());
+         } finally {
+             // Connection, PreparedStatement를 닫는다.
+             try{
+                 if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+                 if ( conn != null ){ conn.close(); conn=null;    }
+             }catch(Exception e){
+                 throw new RuntimeException(e.getMessage());
+             }
+         }
+
+
+    }
 
 
     public boolean duplicateIdCheck(String id)
