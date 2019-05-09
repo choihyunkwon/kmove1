@@ -42,6 +42,9 @@
   function inputIdChk(){
       document.userInfo.idDuplication.value ="idUncheck";
   }
+  function joinOK() {
+	  alert("회원가입되었습니다.");
+  }
     </script>
  </head>
  <body>
@@ -87,7 +90,7 @@
   </tr>
   
   </TABLE>
-   <input type="submit" value="회원가입"/>
+   <input type="submit" value="회원가입" onclick="joinOK()"/>
    <input type="reset" value="다시입력"/>
    <input type="button" value="취소" onclick="goLogin()"/>
    

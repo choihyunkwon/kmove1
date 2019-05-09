@@ -22,7 +22,18 @@ dt.setBalance(0);
 
 da.join(dt);
 %>
+
 <body>
 회원가입 완료
+<%
+	String msg = "";
+
+	if(dt != null)
+	{
+		session.setAttribute("userid",dt.getUserid());
+		msg = "../join/login.jsp";
+	}
+	response.sendRedirect(msg);
+%>
 </body>
 </html>
