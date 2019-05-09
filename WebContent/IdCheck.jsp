@@ -1,35 +1,35 @@
 
 <%@ page import="member.*" %>
 <%
-        // 인코딩 처리
+        // ì¸ì½ë© ì²ë¦¬
         request.setCharacterEncoding("UTF-8"); 
         
-        // 로그인 화면에 입력된 아이디를 가져온다
+        // ë¡ê·¸ì¸ íë©´ì ìë ¥ë ìì´ëë¥¼ ê°ì ¸ì¨ë¤
         String id= request.getParameter("userid");
        
         
-        // DB에서 아이디 확인
+        // DBìì ìì´ë íì¸
         MemberDAO dao = new MemberDAO();
         boolean idok = dao.duplicateIdCheck(id);
         
-        // URL 및 로그인관련 전달 메시지
+        // URL ë° ë¡ê·¸ì¸ê´ë ¨ ì ë¬ ë©ìì§
         String msg = "";
         
-        if(idok == true )    // 로그인 성공
+        if(idok == true )    // ë¡ê·¸ì¸ ì±ê³µ
         { 
         	
-        	System.out.print("성공");
+        	System.out.print("사용 가능한 아이디입니다.");
         	 msg = "1";
         }
         else
         {
-        	System.out.print("실패");
+        	System.out.print("사용불가능한 아이디입니다.");
         	  msg = "0";
         }
        
          
-        // sendRedirect(String URL) : 해당 URL로 이동
-        // URL뒤에 get방식 처럼 데이터를 전달가능
+        // sendRedirect(String URL) : í´ë¹ URLë¡ ì´ë
+        // URLë¤ì getë°©ì ì²ë¼ ë°ì´í°ë¥¼ ì ë¬ê°ë¥
 
 	
     %><%=msg%> 
