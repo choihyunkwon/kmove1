@@ -1,4 +1,4 @@
-package selectdaysum;
+package selectimport;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,15 +7,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
-public class DaysumDAO{
+public class SelectImportDAO{
 	
-	private String url="jdbc:oracle:thin:@localhost:1521:orcl";
-	private String user="system";			//이것들만 수정해주세요 ~ 아이디 비번몰라유~
-	private String pass = "sd72027405";
+	private String url="jdbc:oracle:thin:@172.16.20.38:1521:xe";
+	private String user="kmpro";		
+	private String pass = "1234";
 
 
 	
-	public DaysumDAO() {
+	public SelectImportDAO() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		}catch (Exception e) {
@@ -24,9 +24,9 @@ public class DaysumDAO{
 
 	}
 
-	public ArrayList<DaysumDTO> OracleSelect(){
+	public ArrayList<SelectImportDTO> OracleSelect(){
 		
-		ArrayList<DaysumDTO> dtos = new ArrayList<DaysumDTO>();
+		ArrayList<SelectImportDTO> dtos = new ArrayList<SelectImportDTO>();
 		
 		 Connection con = null;
 		 Statement  stmt= null;
@@ -35,16 +35,14 @@ public class DaysumDAO{
 		try {
 				con = DriverManager.getConnection(url,user,pass);
 				stmt = con.createStatement();
-				rs = stmt.executeQuery("select insertday, plus,ma,us,balance from daysum");
+				rs = stmt.executeQuery("select * from import");
 				
 				while(rs.next()) {
-					String insertday = rs.getString("insertday");
-					int plus = rs.getInt("plus");
-					int ma = rs.getInt("ma");
-					int us = rs.getInt("us");
-					int balance = rs.getInt("balance");
+					String comedate = rs.getString("comedate");
+					int comemoney = rs.getInt("comemoney");
+					String member_id = rs.getString("member_id");
 					
-					DaysumDTO dto = new DaysumDTO(insertday,plus,ma,us,balance);
+					SelectImportDTO dto = new SelectImportDTO(comedate,comemoney,member_id);
 					dtos.add(dto);
 				}
 				
