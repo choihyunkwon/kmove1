@@ -1,4 +1,5 @@
 <%@page import="selectimport.*"%>
+<%@page import="member.*"%>
 <%@page import="java.util.ArrayList" %>
 
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -29,16 +30,21 @@
 	for(int i=0; i<dtos.size(); i++){
 		SelectImportDTO dto = dtos.get(i);
 		
+        String id = session.getAttribute("id").toString();
+        
+        MemberDAO dao = MemberDAO.getInstance();
+        MemberDTO memberDTO = dao.getUserInfo(id);
+		if(id.equals(memberDTO.getName())){
 %>
 
 <tr align="center">
 <td><%=dto.getComedate() %></td>
 <td><%=dto.getComemoney() %></td>
-<td><%=dto.getmember_id()%></td>
+<td><%= memberDTO.getName() %></td>
 </tr>
 
 <%
-	}
+	}}
 	;
 %>
 

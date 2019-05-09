@@ -15,6 +15,8 @@ String comedate = request.getParameter("comedate");
 int comemoney = Integer.parseInt(request.getParameter("comemoney"));
 String member_id = request.getParameter("member_id");
 
+
+
 InsertimportDTO dto = new InsertimportDTO();
 dto.setcomedate(comedate);
 dto.setcomemoney(comemoney);
