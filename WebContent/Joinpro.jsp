@@ -24,16 +24,12 @@ da.join(dt);
 %>
 
 <body>
-회원가입 완료
-<%
-	String msg = "";
-
-	if(dt != null)
-	{
-		session.setAttribute("userid",dt.getUserid());
-		msg = "../join/login.jsp";
-	}
-	response.sendRedirect(msg);
-%>
+<h1>회원가입 완료</h1>
+<input type="submit" value="확인" onclick="gologin()"/>
 </body>
+<script type="text/javascript">
+	function gologin() {
+		location.href="./login.jsp";
+	}
+</script>
 </html>
