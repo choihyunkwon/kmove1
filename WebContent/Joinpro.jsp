@@ -21,15 +21,13 @@ dt.setBalance(0);
 
 
 da.join(dt);
-%>
 
+%>
 <body>
-<h1>회원가입 완료</h1>
-<input type="submit" value="확인" onclick="gologin()"/>
 </body>
 <script type="text/javascript">
-	function gologin() {
 		location.href="./login.jsp";
-	}
+	alert('회원가입이 완료되었습니다.');
+
 </script>
 </html>
