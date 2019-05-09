@@ -12,7 +12,7 @@
   {
       var form = document.userInfo;
   
-      if(!form.id.value){
+      if(!form.userid.value){
           alert("아이디를 입력하세요.");
           return false;
       }
@@ -20,12 +20,12 @@
           alert("아이디 중복체크를 해주세요.");
           return false;
       }
-      if(!form.password.value){
+      if(!form.userpwd.value){
           alert("비밀번호를 입력하세요.");
           return false;
       }
       // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-      if(form.password.value != form.passwordcheck.value ){
+      if(form.userpwd.value != form.userpwd2.value ){
           alert("비밀번호를 동일하게 입력하세요.");
           return false;
       }    
@@ -42,13 +42,16 @@
   function inputIdChk(){
       document.userInfo.idDuplication.value ="idUncheck";
   }
+  function joinOK() {
+	  alert("회원가입되었습니다.");
+  }
     </script>
  </head>
  <body>
  <center>
  <h1> 회원가입 </h1>
  <FORM method="post" action="./Joinpro.jsp" 
-  onsubmit="return checkValue()">
+  onsubmit="return checkValue()" name = "userInfo">
  <table border="2" bgcolor="wheat"> 
  
   <tr>
@@ -87,7 +90,7 @@
   </tr>
   
   </TABLE>
-   <input type="submit" value="회원가입"/>
+   <input type="submit" value="회원가입" onclick="joinOK()"/>
    <input type="reset" value="다시입력"/>
    <input type="button" value="취소" onclick="goLogin()"/>
    
@@ -97,24 +100,7 @@
   function goLogin() {
       location.href="login.jsp";
   }
-  function checkValue()
-  {
-      if(!document.userInfo.id.value){
-          alert("아이디를 입력하세요.");
-          return false;
-      }
-      
-      if(!document.userInfo.password.value){
-          alert("비밀번호를 입력하세요.");
-          return false;
-      }
-      
-      // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-      if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
-          alert("비밀번호를 동일하게 입력하세요.");
-          return false;
-      }
-  }
+
 </script>
     
  </center>
