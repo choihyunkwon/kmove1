@@ -4,11 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import member.MemberDAO;
+
 public class WithDrawalDAO {
 	// 싱글톤
 	private static WithDrawalDAO instance = new WithDrawalDAO();
-	private WithDrawalDAO(){}
 	public static WithDrawalDAO getInstance(){
+		if(instance==null)
+            instance=new WithDrawalDAO();
 		return instance;
 	}
 	

@@ -1,6 +1,9 @@
-<%@page import="WithDrawal.*"%>
-<%@page import="member.*"%>
 
+
+<%@page import="member.MemberDTO"%>
+<%@page import="member.MemberDAO"%>
+<%@page import="WithDrawal.WithDrawalDTO"%>
+<%@page import="WithDrawal.WithDrawalDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -14,11 +17,8 @@ request.setCharacterEncoding("UTF-8");
 
 String usename = request.getParameter("usename");
 int price = Integer.parseInt(request.getParameter("price"));
-int expense_alance = Integer.parseInt(request.getParameter("expense_alance"));
 String member_id = request.getParameter("member_id");
 String usedate = request.getParameter("usedate");
-
-
 
 String id = session.getAttribute("id").toString();
 
@@ -27,7 +27,6 @@ WithDrawalDAO da = WithDrawalDAO.getInstance();
 
 MemberDAO dao = MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
-
 
 Integer balance = memberDTO.getBalance();
 int Expense_alance = balance - price;
