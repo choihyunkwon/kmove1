@@ -35,6 +35,7 @@
 	MemberDAO dao = MemberDAO.getInstance();
 	MemberDTO memberDTO = dao.getUserInfo(id);
 	
+	
 	if(memberDTO.getName().equals(dto.getmember_id())){
 %>
 
@@ -42,7 +43,7 @@
 <td><%=dto.getComedate() %></td>
 <td><%=dto.getComemoney() %></td>
 <td><%=dto.getmember_id()%></td>
-<%-- <td><%=dto.getimport_balance()%></td>--%>
+<td><%=dto.getimport_balance()%></td>
 </tr>
 
 <%
