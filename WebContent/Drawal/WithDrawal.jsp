@@ -18,7 +18,7 @@
 				<option value="기타" name="username">기타</option>
 			</select><br>
 			
-		<br><input type="submit" value="보내기" /> <input type="button" onclick="location.href='./main.jsp'" value="취소">
+		<br><input type="submit" value="보내기" /> <input type="button" onclick="self.close()" value="취소">
 	</form>
 </body>
 
