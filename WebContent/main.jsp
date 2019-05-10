@@ -15,19 +15,23 @@
 			{
 		window.location.href="./logoutpro.jsp";
 	}
-	}
 </script>
 </head>
 <body>
 <% 
-        String id = session.getAttribute("id").toString();
-        
+        String id = (String)session.getAttribute("id");
+MemberDAO dao = MemberDAO.getInstance();
+MemberDTO memberDTO = dao.getUserInfo(id);ㅇ
+System.out.println(id);
+		if(id==null) {
+			response.sendRedirect("./login.jsp");
+		}
+			
         // 세션에 저장된 아이디를 가져와서
         // 그 아이디 해당하는 회원정보를 가져온다.
-        MemberDAO dao = MemberDAO.getInstance();
-        MemberDTO memberDTO = dao.getUserInfo(id);
+        
+		
         %>
-
 
 <div id="center">
 <a href="./logininfo.jsp">회원정보</a>
