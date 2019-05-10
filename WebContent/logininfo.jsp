@@ -35,9 +35,9 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 <h1>회원정보</h1>
 
 이름 : <%=memberDTO.getName() %>  <br>
-아이디 : <%=memberDTO.getUserid() %><br>
+아이디 :<%=memberDTO.getUserid()%><br>
 성별 : <%=memberDTO.getGender()%><br>
-잔액 : <%=memberDTO.getBalance() %><br>
+잔액 : <%=memberDTO.getBalance()%><br>
 <input type="button"  value="홈으로" onclick="main()">  
 <input type="button" value="회원탈퇴"onclick="memberdel()">
 
