@@ -78,7 +78,6 @@ function loginpro() {
 
 
 	</form>
-	
 	</div>
 </body>
 </html>

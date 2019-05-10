@@ -6,7 +6,7 @@ public class SelectImportDTO {
 	
 
     private String comedate,member_id;
-    private int comemoney;
+    private int comemoney, import_balance;
 
     
     
@@ -40,13 +40,21 @@ public class SelectImportDTO {
 	}
 	
 	
+	public int getimport_balance() {
+		return import_balance;
+	}
+
+	public void setimport_balance(int import_balance) {
+		this.import_balance = import_balance;
+	}
 	
 	
 
-	public SelectImportDTO(String comedate, int comemoney , String member_id) {
+	public SelectImportDTO(String comedate, int comemoney , String member_id, int import_balance) {
     	this.comedate = comedate;
     	this.comemoney = comemoney;
     	this.member_id = member_id;
+    	this.import_balance = import_balance;
     }
     
     

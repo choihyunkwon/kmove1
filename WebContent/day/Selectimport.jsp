@@ -20,6 +20,7 @@
 <th>사용일자</th>
 <th>입 금</th>
 <th>성 명</th>
+<th>잔 액</th>
 
 </tr>
 
@@ -34,17 +35,21 @@
 	MemberDAO dao = MemberDAO.getInstance();
 	MemberDTO memberDTO = dao.getUserInfo(id);
 	
+	
 	if(memberDTO.getName().equals(dto.getmember_id())){
+		
 %>
 
 <tr align="center">
 <td><%=dto.getComedate() %></td>
 <td><%=dto.getComemoney() %></td>
 <td><%=dto.getmember_id()%></td>
+<td><%=dto.getimport_balance()%></td>
 </tr>
 
 <%
-	}}
+	}
+	}
 	;
 %>
 

@@ -10,8 +10,7 @@
       <form method = "post" action ="./Insertimportpro.jsp">
 	입금날짜 : <input type = "date" name="comedate" ><br>
 	입금 : <input type ="text" name ="comemoney" placeholder="0 " value="0"><br>
-	
-	<input type = "submit" value = "보내기">
+	<input type = "submit" value = "확인"> <input type = "button" onclick="location.href='./main.jsp'" value = "취소">
       </form>
 </body>
-</html>
+</html> 

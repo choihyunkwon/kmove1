@@ -15,19 +15,23 @@
 			{
 		window.location.href="./logoutpro.jsp";
 	}
-	}
 </script>
 </head>
 <body>
 <% 
-        String id = session.getAttribute("id").toString();
-        
+        String id = (String)session.getAttribute("id");
+MemberDAO dao = MemberDAO.getInstance();
+MemberDTO memberDTO = dao.getUserInfo(id);ㅇ
+System.out.println(id);
+		if(id==null) {
+			response.sendRedirect("./login.jsp");
+		}
+			
         // 세션에 저장된 아이디를 가져와서
         // 그 아이디 해당하는 회원정보를 가져온다.
-        MemberDAO dao = MemberDAO.getInstance();
-        MemberDTO memberDTO = dao.getUserInfo(id);
+        
+		
         %>
-
 
 <div id="center">
 <a href="./logininfo.jsp">회원정보</a>
@@ -43,8 +47,8 @@
 <h2>올해의 지출액은   　<input type="submit" value="확인하기"/></h2>
 </div>
 <div id="button1">				
-<input type="button" value="입금" onclick="location.href='./day/Insertimport.jsp'"/>  
-<input type="submit" value="출금"/>  
+<input type="button" value="입금" onclick="location.href='./day/Insertimport.jsp'"/> 　
+<input type="button" value="출금" onclick="location.href='./Drawal/WithDrawal.jsp'"/>
 <input type="button" value="로그아웃" onclick="logoutpro()"/>
 </div>
 
