@@ -37,6 +37,7 @@
 	
 	
 	if(memberDTO.getName().equals(dto.getmember_id())){
+		
 %>
 
 <tr align="center">

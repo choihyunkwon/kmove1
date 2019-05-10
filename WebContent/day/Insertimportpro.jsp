@@ -33,7 +33,7 @@ Integer balance = (Integer)session.getAttribute("balance");
 
 dto.setcomedate(comedate);
 dto.setcomemoney(comemoney);
-dto.setmember_id(memberDTO.getName());
+dto.setmember_id(memberDTO.getUserid());
 dto.setimport_balance(import_balance);
 
 da.insert(dto);
