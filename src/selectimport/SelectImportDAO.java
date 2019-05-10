@@ -39,7 +39,7 @@ public class SelectImportDAO{
 				
 				while(rs.next()) {
 					String comedate = rs.getString("comedate");
-					int comemoney = rs.getInt("comemoney");
+					int comemoney = rs.getInt("comemoney"); 
 					String member_id = rs.getString("member_id");
 					int import_balance = rs.getInt("import_balance");
 					

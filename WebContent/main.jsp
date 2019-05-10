@@ -14,27 +14,38 @@
 		if(window.confirm("로그아웃 하시겠습니까")) //alert창 띄우기
 			{
 		window.location.href="./logoutpro.jsp";
-	}
-	}
+		
+	}	}
+	   function showDisposit() {window.open("./day/Insertimport.jsp","충전금액","width=400,height=200,left=100,top=50");}
+
 </script>
 </head>
 <body>
 <% 
-        String id = session.getAttribute("id").toString();
-        
+        String id = (String)session.getAttribute("id");
+MemberDAO dao = MemberDAO.getInstance();
+MemberDTO memberDTO = dao.getUserInfo(id);
+
+		if(id==null) {
+		
+			response.sendRedirect("./login.jsp");
+			
+		}
+			
         // 세션에 저장된 아이디를 가져와서
         // 그 아이디 해당하는 회원정보를 가져온다.
-        MemberDAO dao = MemberDAO.getInstance();
-        MemberDTO memberDTO = dao.getUserInfo(id);
+        
+		
         %>
-
 
 <div id="center">
 <a href="./logininfo.jsp">회원정보</a>
 </div>
 <div id="title1">
+<%if(id!=null){ %>
 <h1>어서오세요  <%= memberDTO.getName() %>  님 </h1>
 <h2>현재 총 잔액은 <%= memberDTO.getBalance() %> 입니다</h2>
+<%} %>
 </div>
 <hr>
 <div id="write1">
@@ -43,7 +54,7 @@
 <h2>올해의 지출액은   　<input type="submit" value="확인하기"/></h2>
 </div>
 <div id="button1">				
-<input type="button" value="입금" onclick="location.href='./day/Insertimport.jsp'"/> 　
+<input type="button" value="입금" onclick="showDisposit()"/>
 <input type="button" value="출금" onclick="location.href='./Drawal/WithDrawal.jsp'"/>
 <input type="button" value="로그아웃" onclick="logoutpro()"/>
 </div>
