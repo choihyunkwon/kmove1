@@ -37,6 +37,7 @@ public class WithDrawalDAO {
 			// 쿼리 수행
 			ps.executeUpdate();
 		} catch (Exception e) {
+			System.out.println(e);
 			e.printStackTrace();
 		} finally {
 			try {
