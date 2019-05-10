@@ -14,8 +14,7 @@ request.setCharacterEncoding("UTF-8");
 
 String comedate = request.getParameter("comedate");
 int comemoney = Integer.parseInt(request.getParameter("comemoney"));
-String member_id = request.getParameter("member_id");
-int import_balance = Integer.parseInt(request.getParameter("comemoney"));
+
 
 
 String id = session.getAttribute("id").toString();
@@ -27,16 +26,15 @@ MemberDAO dao = MemberDAO.getInstance();
 
 MemberDTO memberDTO = dao.getUserInfo(id);
 
-
-Integer balance = (Integer)session.getAttribute("balance");
-
+Integer balance = memberDTO.getBalance();
+int import_balance = balance + comemoney;
 
 dto.setcomedate(comedate);
 dto.setcomemoney(comemoney);
 dto.setmember_id(memberDTO.getUserid());
 dto.setimport_balance(import_balance);
-
 da.insert(dto);
+da.update(dto);
 %>
 <body>
 입력완료
