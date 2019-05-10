@@ -29,12 +29,12 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 
 
 Integer balance = (Integer)session.getAttribute("balance");
-MemberDTO mdto = dao.getInsert(balance);
+
 
 dto.setcomedate(comedate);
-dto.setcomemoney(mdto.getBalance());
+dto.setcomemoney(comemoney);
 dto.setmember_id(memberDTO.getName());
-//dto.setimport_balance(comemoney);
+dto.setimport_balance(import_balance);
 
 da.insert(dto);
 %>

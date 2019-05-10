@@ -32,14 +32,14 @@ public class InsertimportDTO {
 	
 	
 	
-//
-//	public int getimport_balance() {
-//		return import_balance;
-//	}
-//
-//	public void setimport_balance(int import_balance) {
-//		this.import_balance = import_balance;
-//	}
+
+	public int getimport_balance() {
+		return import_balance;
+	}
+
+	public void setimport_balance(int import_balance) {
+		this.import_balance = import_balance;
+	}
 
 
 	
