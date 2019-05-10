@@ -8,7 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
-
 <script type="text/javascript">
 	function logoutpro() {
 		if(window.confirm("로그아웃 하시겠습니까")) //alert창 띄우기
@@ -16,13 +15,13 @@
 		window.location.href="./logoutpro.jsp";
 	}
 </script>
+
 </head>
 <body>
 <% 
         String id = (String)session.getAttribute("id");
 MemberDAO dao = MemberDAO.getInstance();
-MemberDTO memberDTO = dao.getUserInfo(id);ㅇ
-System.out.println(id);
+MemberDTO memberDTO = dao.getUserInfo(id);
 		if(id==null) {
 			response.sendRedirect("./login.jsp");
 		}
@@ -37,6 +36,8 @@ System.out.println(id);
 <a href="./logininfo.jsp">회원정보</a>
 </div>
 <div id="title1">
+<%
+if (id==null)%>
 <h1>어서오세요  <%= memberDTO.getName() %>  님 </h1>
 <h2>현재 총 잔액은 <%= memberDTO.getBalance() %> 입니다</h2>
 </div>
@@ -51,6 +52,6 @@ System.out.println(id);
 <input type="button" value="출금" onclick="location.href='./Drawal/WithDrawal.jsp'"/>
 <input type="button" value="로그아웃" onclick="logoutpro()"/>
 </div>
-
 </body>
+
 </html>
