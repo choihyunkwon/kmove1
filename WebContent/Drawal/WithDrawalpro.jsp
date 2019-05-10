@@ -17,7 +17,6 @@ request.setCharacterEncoding("UTF-8");
 
 String usename = request.getParameter("usename");
 int price = Integer.parseInt(request.getParameter("price"));
-String member_id = request.getParameter("member_id");
 String usedate = request.getParameter("usedate");
 
 String id = session.getAttribute("id").toString();
