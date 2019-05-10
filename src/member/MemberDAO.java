@@ -67,6 +67,9 @@ public class MemberDAO {
 		return cnt;
 	}
 	
+
+	
+	
 	public MemberDTO login(String id, String pwd) {
 		MemberDTO dto = null;
 		String sql = "select * from member "
@@ -289,6 +292,48 @@ public class MemberDAO {
             }
         }
     } // end deleteMember
+
+ public void updateMember(MemberDTO member) throws SQLException{
+        
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+ 
+        try {
+ 
+            StringBuffer query = new StringBuffer();
+            query.append("UPDATE MEMBER SET");
+            query.append(" PASSWORD=?, NAME=?, GENDER=?");
+            query.append(" WHERE ID=?");
+ 
+            conn = DBConnection.getConnection();
+            pstmt = conn.prepareStatement(query.toString());
+ 
+            // 자동 커밋을 false로 한다.
+            conn.setAutoCommit(false);
+            
+            pstmt.setString(1, member.getUserpwd());
+            pstmt.setString(2, member.getName());
+            pstmt.setString(3, member.getGender());
+            pstmt.setString(4, member.getUserid());
+ 
+            pstmt.executeUpdate();
+            // 완료시 커밋
+            conn.commit(); 
+                        
+        } catch (Exception sqle) {
+        	System.out.println(sqle);
+            conn.rollback(); // 오류시 롤백
+            throw new RuntimeException(sqle.getMessage());
+        } finally {
+        	disconnect();
+            try{
+                if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+                if ( conn != null ){ conn.close(); conn=null;    }
+            }catch(Exception e){
+                throw new RuntimeException(e.getMessage());
+            }
+        }
+    } // end updateMember
 
 
     

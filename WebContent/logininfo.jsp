@@ -16,6 +16,9 @@
 		 location.href="./main.jsp";
 
 }
+function modify(){
+	location.href="./Modifyform.jsp"
+}
 function memberdel() {
 	 location.href="./deleteform.jsp";
 
@@ -39,6 +42,7 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 성별 : <%=memberDTO.getGender()%><br>
 잔액 : <%=memberDTO.getBalance() %><br>
 <input type="button"  value="홈으로" onclick="main()">  
+<input type="button" value="회원정보 수정" onclick="modify()">
 <input type="button" value="회원탈퇴"onclick="memberdel()">
 
 </div>
