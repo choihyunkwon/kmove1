@@ -35,7 +35,7 @@ public class SelectImportDAO{
 		try {
 				con = DriverManager.getConnection(url,user,pass);
 				stmt = con.createStatement();
-				rs = stmt.executeQuery("select * from import");
+				rs = stmt.executeQuery("select * from import order by 1");
 				
 				while(rs.next()) {
 					String comedate = rs.getString("comedate");

@@ -13,7 +13,9 @@ header {
 	color: white;
 	padding: 30px;
 }
-
+table {
+	margin-top:10px;	
+}
 div {
 	max-width: 100%
 }
@@ -36,13 +38,12 @@ function loginpro() {
 <body>
 	
 	<header>
-	<h2>Cities</h2>
+	<h2>K-move account book</h2>
 	</header>
 	
 	<div width="280px" height="300px" align="center">
 	<form action="loginpro.jsp" method="post">
-		<legend style="text-align: center;">로그인</legend>
-		<table border="0" width="250px" height="100px">
+		<table border="0" width="250px" height="100px" >
 			<tr bgcolor="gray">
 				<td align="center"><font size=2 color="black">아이디</font></td>
 				<td><input type="text" name="userid" /></td>
