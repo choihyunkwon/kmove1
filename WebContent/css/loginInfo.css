@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+#info {
+	font-size:30px;
+	font-style:oblique;
+	font-height:60px;
+	color: gray;
+
+}
+
+#button {
+
+    background-color: #gray;
+
+    border: none;
+
+    color:#fff;
+
+    display: inline-block;
+
+    font-size: 15px;
+
+    margin: 4px;
+
+	text-align:center;
+	
+	padding : 300px;
+
+}

@@ -6,8 +6,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/loginInfo.css" rel="stylesheet" type="text/css">
 </head>
+<style>
+header {
+	background-color: #666; padding : 30px;
+	text-align: center;
+	font-size: 35px;
+	color: white;
+	padding: 30px;
+	font-height:60px;
+}
+</style>
 <script type ="text/javascript">
 	/* function gomain() {
 	 location.href="main.jsp";
@@ -34,17 +44,20 @@ MemberDAO dao = MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
 %>
 <body>
-<div id="info1">
+<header>
 <h1>회원정보</h1>
-
-이름 : <%=memberDTO.getName() %>  <br>
-아이디 :<%=memberDTO.getUserid()%><br>
-성별 : <%=memberDTO.getGender()%><br>
-잔액 : <%=memberDTO.getBalance()%><br>
+</header>
+<div id="info">
+<hr>
+<p>이름 : <%=memberDTO.getName() %></p>
+<p>아이디 : <%=memberDTO.getUserid()%></p> 
+<p>성별 : <%=memberDTO.getGender()%></p>
+<p>잔액 : <%=memberDTO.getBalance()%></p>
+</div>
+<div id ="button">
 <input type="button"  value="홈으로" onclick="main()">  
 <input type="button" value="회원정보 수정" onclick="modify()">
 <input type="button" value="회원탈퇴"onclick="memberdel()">
-
 </div>
 
 </body>
