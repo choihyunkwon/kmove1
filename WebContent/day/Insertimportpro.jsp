@@ -23,8 +23,8 @@ InsertimportDTO dto = new InsertimportDTO();
 InsertimportDAO da = InsertimportDAO.getInstance();
 
 MemberDAO dao = MemberDAO.getInstance();
-
 MemberDTO memberDTO = dao.getUserInfo(id);
+
 
 Integer balance = memberDTO.getBalance();
 int import_balance = balance + comemoney;
@@ -36,6 +36,7 @@ dto.setimport_balance(import_balance);
 da.insert(dto);
 da.update(dto);
 %>
+
 <body>
 입력완료
 </body>
