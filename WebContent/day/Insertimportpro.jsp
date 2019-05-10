@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ют╠щ</title>
 </head>
 <%
 request.setCharacterEncoding("UTF-8");

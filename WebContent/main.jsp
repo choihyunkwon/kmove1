@@ -54,7 +54,7 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 <h2>올해의 지출액은   　<input type="submit" value="확인하기"/></h2>
 </div>
 <div id="button1">				
-<input type="button" value="입금" onclick="location.href='./day/Insertimport.jsp'"/> 　
+<input type="button" value="입금" onclick="location.href='./day/Insertimport.jsp'"/>
 <input type="button" value="출금" onclick="location.href='./Drawal/WithDrawal.jsp'"/>
 <input type="button" value="로그아웃" onclick="logoutpro()"/>
 </div>
