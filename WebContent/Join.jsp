@@ -7,6 +7,9 @@
  <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title> 회원가입 </title>
+  <style>
+
+</style>
   <script type="text/javascript">
   function checkValue()
   {
@@ -40,6 +43,7 @@
 		  return false;
 	  }
 }
+  
   function openIdChk(){
       
       window.name = "parentForm";
@@ -50,15 +54,16 @@
  <body>
  <center>
  <h1> 회원가입 </h1>
+ 
  <FORM method="post" action="./Joinpro.jsp" 
   onsubmit="return checkValue()" name = "userInfo">
- <table border="2" bgcolor="wheat"> 
+ <table border="1" bgcolor="gray"> 
  
   <tr><th> 이름 </th>
    <td><input type="text" name="name"/></td>
   </tr>
   
-<tr><th>아이디</th>
+<tr ><th>아이디</th>
 	<td><input type="text" name="userid" maxlength="20" onkeydown="inputIdChk()"/>
 		<input type="button" value="중복확인" onclick="openIdChk()"/>
 		<input type="hidden" name="idDuplication" value="idUncheck">
@@ -91,8 +96,9 @@
    <input type="submit" value="회원가입"/>
    <input type="reset" value="다시입력"/>
    <input type="button" value="취소" onclick="goLogin()"/>
-   
+  
   </FORM>
+
   
   <script type="text/javascript">
   function goLogin() {
