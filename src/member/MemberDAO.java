@@ -168,6 +168,7 @@ public class MemberDAO {
                  member.setUserpwd(rs.getString("password"));
                  member.setName(rs.getString("name"));
                  member.setGender(rs.getString("gender"));
+                 member.setBalance(rs.getInt("balance"));
              }
 
              return member;
