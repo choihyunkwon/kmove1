@@ -4,35 +4,14 @@
 	text-align:center;
 	background-color: #666; 
 	padding : 30px;
-	text-align: center;
-	font-size: 20px;
+	font-size: 30px;
 	color: white;
-	padding: 30px;
-}
-
-#info {
-	font-size:30px;
-	font-style:oblique;
-	font-height:60px;
-	color: gray;
-
 }
 #button {
-
-    background-color: #white;
-
-    border: none;
-
-    color:#fff;
-
-    display: inline-block;
-
-    font-size: 15px;
-
 	text-align:center;
-	
-	width : 1900px;
-	line-height : 700px;
-	height : 100px;
-} 
- 
+}
+#title {
+	background-color: gray;
+	font-size: 20px;
+	font-weight: bold;
+}
