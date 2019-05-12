@@ -42,6 +42,7 @@ da.update(dto);
 %>
 
 <body>
-입력완료
+입력완료<br>
+<input type=button onclick="self.close()" value="확인">
 </body>
 </html>
