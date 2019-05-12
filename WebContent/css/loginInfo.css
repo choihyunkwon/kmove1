@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+#info1 {
+	text-align:center;
+	background-color: #666; 
+	padding : 30px;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	padding: 30px;
+}
 
 #info {
 	font-size:30px;
@@ -8,10 +17,9 @@
 	color: gray;
 
 }
-
 #button {
 
-    background-color: #gray;
+    background-color: #white;
 
     border: none;
 
@@ -21,10 +29,10 @@
 
     font-size: 15px;
 
-    margin: 4px;
-
 	text-align:center;
 	
-	padding : 300px;
-
-}
+	width : 1900px;
+	line-height : 700px;
+	height : 100px;
+} 
+ 
