@@ -8,16 +8,6 @@
 <title>Insert title here</title>
 <link href="css/loginInfo.css" rel="stylesheet" type="text/css">
 </head>
-<style>
-header {
-	background-color: #666; padding : 30px;
-	text-align: center;
-	font-size: 35px;
-	color: white;
-	padding: 30px;
-	font-height:60px;
-}
-</style>
 <script type ="text/javascript">
 	/* function gomain() {
 	 location.href="main.jsp";
@@ -44,9 +34,9 @@ MemberDAO dao = MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
 %>
 <body>
-<header>
-<h1>회원정보</h1>
-</header>
+<div id="info1">
+<h1 style="width: 280px";>회원정보</h1>
+</div>
 <div id="info">
 <hr>
 <p>이름 : <%=memberDTO.getName() %></p>
@@ -55,7 +45,7 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 <p>잔액 : <%=memberDTO.getBalance()%></p>
 </div>
 <div id ="button">
-<input type="button"  value="홈으로" onclick="main()">  
+<input type="button" value="홈으로" style="height:50px; width:100px; font-size:20px;" onclick="main()">  
 <input type="button" value="회원정보 수정" onclick="modify()">
 <input type="button" value="회원탈퇴"onclick="memberdel()">
 </div>
