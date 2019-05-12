@@ -35,11 +35,11 @@ public class SelectDrawalDAO {
 				while(rs.next()) {
 					String usedate = rs.getString("usedate");
 					int price = rs.getInt("price");
-					String username = rs.getString("username");
+					String usename = rs.getString("usename");
 					int expense_alance = rs.getInt("expense_alance");
 					String member_id = rs.getString("member_id");
 					
-					SelectDrawalDTO dto = new SelectDrawalDTO(usedate,price,username,expense_alance,member_id);
+					SelectDrawalDTO dto = new SelectDrawalDTO(usedate,price,usename,expense_alance,member_id);
 					dtos.add(dto);
 				}
 		}catch(Exception e) {

@@ -1,3 +1,4 @@
+<%@page import="member.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>출금</title>
-
 	<script type="text/javascript">
         function checkValue() {
             if(!document.expense.usedate.value){
@@ -23,7 +23,6 @@
         }
         
     </script>
-
 </head>
 <body>
 

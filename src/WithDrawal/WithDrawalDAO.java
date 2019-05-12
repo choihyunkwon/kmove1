@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import member.MemberDAO;
 
 public class WithDrawalDAO {
 	// 싱글톤
