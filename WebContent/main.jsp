@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 <style type="text/css">
 input{
-
 padding:7px 30px 7px 30px;
 font-size:15px;
 font-weight:bold;

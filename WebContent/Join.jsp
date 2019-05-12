@@ -7,8 +7,19 @@
  <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title> 회원가입 </title>
-  <style>
-
+<style type="text/css">
+#button{
+padding:7px 30px 7px 30px;
+font-size:15px;
+font-weight:bold;
+color:black;
+text-align:center;
+border:solid 1px 0px 1px ;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#666));
+-webkit-border-radius:5px;
+border-bottom-color:#666;
+text-shadow:0 -1px 0 #666;
+}
 </style>
   <script type="text/javascript">
   function checkValue()
@@ -57,7 +68,7 @@
  
  <FORM method="post" action="./Joinpro.jsp" 
   onsubmit="return checkValue()" name = "userInfo">
- <table border="1" bgcolor="gray"> 
+ <table border="1" bgcolor="#BDBDBD"> 
  
   <tr><th> 이름 </th>
    <td><input type="text" name="name"/></td>
@@ -92,11 +103,11 @@
    </td>
   </tr>
   
-  </TABLE>
+  </table>
+  <br>
    <input type="submit" value="회원가입"/>
    <input type="reset" value="다시입력"/>
    <input type="button" value="취소" onclick="goLogin()"/>
-  
   </FORM>
 
   
