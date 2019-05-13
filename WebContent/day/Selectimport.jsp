@@ -11,17 +11,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>수입 내역</title>
+<link href="../css/Drawal.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function selectback(){
+		window.location.href="../main.jsp";
+	}
+</script>
 
 </head>
 <body>
-<h4 align="center">일별</h4>
+<h3 align="center">일별</h3>
 <table border="1" align="center" style="width:80%; heigh:450px" >
 <tr align="center">
-<th>사용일자</th>
-<th>입 금</th>
-<th>성 명</th>
-<th>잔 액</th>
+<th id="title">사용일자</th>
+<th id="title">입 금</th>
+<th id="title">성 명</th>
+<th id="title">잔 액</th>
 
 </tr>
 
@@ -57,14 +63,18 @@
 
 </table>
 <div align="center">
-<input type="button" value="뒤로가기" >
+<input id="button1" type="button" value="돌아가기" onclick="selectback()" >
 </div>
 <table border="1" align="center" style="width:80%; heigh:450px" >
 <tr align="center">
+<<<<<<< HEAD
 <th>사용일자</th>
 <th>입 금</th>
 <th>성 명</th>
 <th>잔 액</th>
+=======
+<th id="title">입 금</th>
+
 </tr>
 
 <%
@@ -77,6 +87,7 @@
 		String id = session.getAttribute("id").toString();
 		MemberDAO dao = MemberDAO.getInstance();
 		MemberDTO memberDTO = dao.getUserInfo(id);
+		
 		if(memberDTO.getUserid().equals(dto.getmember_id())){
 		
 %>
@@ -92,9 +103,40 @@
 	}
 	;
 %>
+<table border="1" align="center" style="width:80%; heigh:450px" >
+<tr align="center">
+<<<<<<< HEAD
+<th>사용일자</th>
+<th>입 금</th>
+<th>성 명</th>
+<th>잔 액</th>
+=======
+<%
+	SelectImportDAO dadd = new SelectImportDAO();
+	ArrayList<SelectImportDTO> dtott = dadd.yearSelect();
+	
+	for(int i=0; i<dtott.size(); i++){
+		SelectImportDTO dto = dtott.get(i);
+		
+		String id = session.getAttribute("id").toString();
+		MemberDAO dao = MemberDAO.getInstance();
+		MemberDTO memberDTO = dao.getUserInfo(id);
+		
+		if(memberDTO.getUserid().equals(dto.getmember_id())){
+		
+%>
 
-
-</table>
+<tr align="center">
+<td><%=dto.getComedate() %></td>
+<td><%=dto.getComemoney() %></td>
+<td><%=dto.getmember_id()%></td>
+<td><%=dto.getimport_balance()%></td>
+</tr>
+<%
+	}
+	}
+	;
+%>
 
 </body>
 </html>
