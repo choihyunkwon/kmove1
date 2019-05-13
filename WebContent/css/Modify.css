@@ -6,7 +6,18 @@
 	font-size: 30px;
 	color: white;
 }
-#asd {
+
+#title {
+	color:black;
+	background-color:#acacac;
+	font-size:20px;
+}
+
+#button {
+	text-align:center;
+}
+
+#button1 {
 	padding:7px 30px 7px 30px;
 	font-size:15px;
 	font-weight:bold;
@@ -17,12 +28,12 @@
 	border-bottom-color:#666;
 	text-shadow:0 -1px 0 #666;
 }
-
-#button {
-	text-align:center;
+table {
+	margin-left: auto;
+	margin-right: auto;
+	border: 10px solid #acacac;
 }
-#title {
-	color:black;
-	background-color:#acacac;
-	font-size:20px;
+
+td {
+	border: 1px solid gray;
 }
