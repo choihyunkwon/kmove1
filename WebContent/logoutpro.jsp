@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="UTF-8">
-<title>·Î±×¾Æ¿ô</title>
+<title>ë¡œê·¸ì•„ì›ƒ</title>
 </head>
 <body>
 	<%
-	session.invalidate(); //¸ðµç ¼¼¼ÇÁ¤º¸ »èÁ¦
-	response.sendRedirect("./login.jsp"); //·Î±×ÀÎ È­¸éÀ¸·Î ÀÌµ¿
+	session.invalidate(); //ëª¨ë“  ì„¸ì…˜ì •ë³´ ì‚­ì œ
+	response.sendRedirect("./login.jsp"); //ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™
 	%>
 </body>
 </html>
