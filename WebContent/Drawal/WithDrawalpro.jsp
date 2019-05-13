@@ -1,5 +1,3 @@
-
-
 <%@page import="member.MemberDTO"%>
 <%@page import="member.MemberDAO"%>
 <%@page import="WithDrawal.WithDrawalDTO"%>
@@ -43,7 +41,9 @@ da.update(dto);
 %>
 
 <body>
-입력완료<br>
-<input type=button onclick="self.close()" value="확인">
+<script type="text/javascript">
+	alert("입금되었습니다");
+	self.close();
+</script>
 </body>
 </html>
