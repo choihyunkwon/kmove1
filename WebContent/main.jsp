@@ -39,6 +39,9 @@ text-shadow:0 -1px 0 #666;
 	 function selectDrawal(){
 		 window.location.href="./Drawal/SelectDrawal.jsp";
 	 }
+	 function dayimport(){
+		 window.location.href="./day/Selectimport.jsp";
+	 }
 
 </script>
 </head>
@@ -75,10 +78,12 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 
 </div>
 <div id="write1">
-<h2>오늘의 지출액은   　<input type="submit" value="수입"/>
-					 <input type="button" value="지출" onclick="selectDrawal()"></h2>
-<h2>이달의 지출액은  　 <input type="submit" value="확인하기"/></h2>
-<h2>올해의 지출액은   　<input type="submit" value="확인하기"/></h2>
+<h2>오늘의 지출액   　<input type="submit" value="수입" onclick="dayimport() "/>
+					<input type="button" value="지출" onclick="selectDrawal()"></h2>
+<h2>이달의 지출액  　 <input type="submit" value="수입" onclick="dayimport() "/>
+					<input type="button" value="지출" onclick="selectDrawal()"></h2>
+<h2>올해의 지출액   　<input type="submit" value="수입" onclick="dayimport() "/>
+					<input type="button" value="지출" onclick="selectDrawal()"></h2>
 </div>
 <div id="button1">				
 <input type="button" value="입금" onclick="showDisposit()"/>
