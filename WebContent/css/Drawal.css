@@ -1,11 +1,4 @@
 @charset "UTF-8";
-#info1 {
-	text-align:center;
-	background-color: #666; 
-	padding : 30px;
-	font-size: 30px;
-	color: white;
-}
 
 #title {
 	color:black;
@@ -28,11 +21,12 @@
 	border-bottom-color:#666;
 	text-shadow:0 -1px 0 #666;
 }
-table {
-	margin-left: auto;
-	margin-right: auto;
-	border: 10px solid #acacac;
-} 
+
+
+th {
+
+	border: 1px solid gray;
+}
 
 td {
 	border: 1px solid gray;

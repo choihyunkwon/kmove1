@@ -23,22 +23,22 @@ function checkValue(){
 <h1 >회원정보</h1>
 </div>
 <hr>
+
+<form name="deleteform" method="post" action="DeletePro.jsp"
+			onsubmit="return checkValue()">
  
-    <form name="deleteform" method="post" action="DeletePro.jsp"
-        onsubmit="return checkValue()">
- 
-        <table>
-            <tr>
-                <td id="title" bgcolor="skyblue">비밀번호</td>
-                <td><input type="password" name="password" maxlength="50"></td>
-            </tr>
-        </table>
+<table>
+<tr>
+	<td id="title" bgcolor="skyblue">비밀번호</td>
+	<td><input type="password" name="password" maxlength="50"></td>
+</tr>
+</table>
         
-        <br> 
-        <div id="button">
-        <input id="button1" type="button" value="취소" onclick="javascript:window.location='logininfo.jsp'">
-        <input id="button1" type="submit" value="탈퇴" />
-        </div> 
-    </form>
+<br> 
+<div id="button">
+<input id="button1" type="button" value="취소" onclick="javascript:window.location='logininfo.jsp'">
+<input id="button1" type="submit" value="탈퇴" />
+</div> 
+</form>
 </body>
 </html>

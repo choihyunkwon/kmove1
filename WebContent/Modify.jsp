@@ -14,9 +14,8 @@ MemberDAO da = MemberDAO.getInstance();
 MemberDTO dto = da.getUserInfo(id);
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>회원정보 수정 완료</title>
 <link href="css/Modify.css" rel="stylesheet" type="text/css">
-</head>
 <script type="text/javascript">
 
 //비밀번호 입력여부 체크
@@ -41,13 +40,12 @@ function checkValue() {
 }
 
 </script>
-
+</head>
 <body>
 	<div id="info1">
 		<h1>회원정보 수정</h1>
 	</div>
 	<hr>
-
 	<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
 	<!-- 값(파라미터) 전송은 POST 방식 -->
 	<form method="post" action="ModifyPro.jsp" name="userInfo"
@@ -76,9 +74,9 @@ function checkValue() {
 		</table>
 		<br>
 		<div id="button">
-		<input id="asd" type="button" value="취소"
+		<input id="button1" type="button" value="취소"
 			onclick="javascript:window.location='main.jsp'"> 
-			<input id="asd" type="submit" value="수정"/>
+			<input id="button1" type="submit" value="수정"/>
 		</div>
 	</form>
 </body>
