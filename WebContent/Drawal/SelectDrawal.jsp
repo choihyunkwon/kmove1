@@ -42,7 +42,7 @@
 <tr align="center">
 <td><%=dto.getUsedate() %></td>
 <td><%=dto.getPrice() %></td>
-<td><%=dto.getUsename()%></td>
+<td><%=dto.getMember_id()%></td>
 <td><%=dto.getExpense_alance()%></td>
 </tr>
 <%
