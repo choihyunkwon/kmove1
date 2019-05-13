@@ -51,6 +51,63 @@ public class SelectDrawalDAO {
 		return dtos;
 	}
 	
+	
+	public ArrayList<SelectDrawalDTO> OracleDrawal_day(){
+		ArrayList<SelectDrawalDTO> dtos = new ArrayList<SelectDrawalDTO>();
+		
+		try {
+				con = DriverManager.getConnection(url,user,pass);
+				stmt = con.createStatement();
+				rs = stmt.executeQuery("select * from expense order by 1");
+				
+				while(rs.next()) {
+					String usedate = rs.getString("usedate");
+					int price = rs.getInt("price");
+					String usename = rs.getString("usename");
+					int expense_alance = rs.getInt("expense_alance");
+					String member_id = rs.getString("member_id");
+					
+					SelectDrawalDTO dto = new SelectDrawalDTO(usedate,price,usename,expense_alance,member_id);
+					dtos.add(dto);
+				}
+		}catch(Exception e) {
+			e.getMessage();
+		}finally {
+			disconnect();
+		}
+		
+		return dtos;
+	}
+	
+	
+	
+	public ArrayList<SelectDrawalDTO> OracleDrawal_year(){
+		ArrayList<SelectDrawalDTO> dtos = new ArrayList<SelectDrawalDTO>();
+		
+		try {
+				con = DriverManager.getConnection(url,user,pass);
+				stmt = con.createStatement();
+				rs = stmt.executeQuery("select * from expense order by 1");
+				
+				while(rs.next()) {
+					String usedate = rs.getString("usedate");
+					int price = rs.getInt("price");
+					String usename = rs.getString("usename");
+					int expense_alance = rs.getInt("expense_alance");
+					String member_id = rs.getString("member_id");
+					
+					SelectDrawalDTO dto = new SelectDrawalDTO(usedate,price,usename,expense_alance,member_id);
+					dtos.add(dto);
+				}
+		}catch(Exception e) {
+			e.getMessage();
+		}finally {
+			disconnect();
+		}
+		
+		return dtos;
+	}
+	
 	public void disconnect() {
 	try{
 		if(rs != null) rs.close();
