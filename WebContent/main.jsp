@@ -35,6 +35,10 @@ text-shadow:0 -1px 0 #666;
 	  }
 	   function showDisposit() {window.open("./day/Insertimport.jsp","충전금액","width=400,height=200,left=100,top=50");}
 	   function showDrawal() {window.open("./Drawal/WithDrawal.jsp","충전금액","width=400,height=200,left=100,top=50");}
+	   
+	 function selectDrawal(){
+		 window.location.href="./Drawal/SelectDrawal.jsp";
+	 }
 
 </script>
 </head>
@@ -71,7 +75,8 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 
 </div>
 <div id="write1">
-<h2>오늘의 지출액은   　<input type="submit" value="확인하기"/></h2>
+<h2>오늘의 지출액은   　<input type="submit" value="수입"/>
+					 <input type="button" value="지출" onclick="selectDrawal()"></h2>
 <h2>이달의 지출액은  　 <input type="submit" value="확인하기"/></h2>
 <h2>올해의 지출액은   　<input type="submit" value="확인하기"/></h2>
 </div>

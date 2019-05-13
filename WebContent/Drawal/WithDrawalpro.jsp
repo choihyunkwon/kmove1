@@ -27,6 +27,7 @@ WithDrawalDAO da = WithDrawalDAO.getInstance();
 MemberDAO dao = MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
 
+
 Integer balance = memberDTO.getBalance();
 int Expense_alance = balance - price;
 
