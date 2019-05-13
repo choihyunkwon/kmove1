@@ -1,0 +1,63 @@
+package selectimport;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+
+public class SumDAO {
+	
+	private String url="jdbc:oracle:thin:@172.16.20.38:1521:xe";
+	private String user="kmpro";		
+	private String pass = "1234";
+
+
+
+	public SumDAO() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}catch (Exception e) {
+			e.getMessage();
+		}
+
+	}
+	
+	public ArrayList<SelectImportDTO> sumSelect(){
+		
+		ArrayList<SelectImportDTO> dtos = new ArrayList<SelectImportDTO>();
+		
+		 Connection con = null;
+		 Statement  stmt= null;
+		 ResultSet rs =null;
+		
+		try {
+				con = DriverManager.getConnection(url,user,pass);
+				stmt = con.createStatement();
+				rs = stmt.executeQuery("select sum(comemoney) as comemoney from import order by 1");
+				
+				while(rs.next()) {
+					int comemoney = rs.getInt("comemoney"); 
+					
+					SelectImportDTO dto = new SelectImportDTO(comemoney);
+					dtos.add(dto);
+				}
+				
+			}catch(Exception e)	{
+				e.printStackTrace();
+			}finally {
+				try {
+				if (rs != null) rs.close();
+				if(stmt!=null) stmt.close();
+				if (con != null) con.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+	}
+		
+		
+		return dtos;
+	}
+
+}

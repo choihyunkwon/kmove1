@@ -42,5 +42,7 @@ public class SelectDrawalDTO {
     	this.expense_alance = expense_alance;
     	this.member_id = member_id;
     }
+	
+	
 
 }
