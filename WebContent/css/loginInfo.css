@@ -1,4 +1,9 @@
 @charset "UTF-8";
+#title {
+	background-color: gray;
+	font-size: 20px;
+	font-weight: bold;
+}
 
 #info1 {
 	text-align:center;
@@ -9,9 +14,4 @@
 }
 #button {
 	text-align:center;
-}
-#title {
-	background-color: gray;
-	font-size: 20px;
-	font-weight: bold;
 }

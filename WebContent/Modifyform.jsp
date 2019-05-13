@@ -38,18 +38,7 @@
 	<!-- 값(파라미터) 전송은 POST 방식 -->
 	<form method="post" action="ModifyformPro.jsp" name="userInfo"
 		onsubmit="return checkValue()">
-<style>
-table {
-	margin-left: auto;
-	margin-right: auto;
-	border: 10px solid #acacac;
-}
 
-td {
-	border: 1px solid gray;
-}
-
-</style>
 		<table>
 			<tr>
 				<td id="title">아이디</td>
@@ -71,9 +60,9 @@ td {
 		</table>
 		<br>
 		<div id="button">
-			<input id="asd" type="button" value="취소"
+			<input id="button1" type="button" value="취소"
 				onclick="javascript:window.location='logininfo.jsp'"> 
-				<input id="asd" type="submit" value="수정"/>
+				<input id="button1" type="submit" value="수정"/>
 		</div>
 	</form>
 

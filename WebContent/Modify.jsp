@@ -16,18 +16,6 @@ MemberDTO dto = da.getUserInfo(id);
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/Modify.css" rel="stylesheet" type="text/css">
-
-<style type="text/css">
-        table {
-	margin-left: auto;
-	margin-right: auto;
-	border: 10px solid #acacac;
-}
-
-td {
-	border: 1px solid gray;
-}
-</style>
 </head>
 <script type="text/javascript">
 
@@ -55,8 +43,6 @@ function checkValue() {
 </script>
 
 <body>
-	<br>
-	<br>
 	<div id="info1">
 		<h1>회원정보 수정</h1>
 	</div>
