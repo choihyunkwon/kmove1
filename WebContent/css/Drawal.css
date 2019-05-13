@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+#title {
+	color:black;
+	background-color:#acacac;
+	font-size:20px;
+}
+
+#button {
+	text-align:center;
+}
+
+#button1 {
+	padding:7px 30px 7px 30px;
+	font-size:15px;
+	font-weight:bold;
+	color:black;
+	border:solid 1px 0px 1px ;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#666));
+	-webkit-border-radius:5px;
+	border-bottom-color:#666;
+	text-shadow:0 -1px 0 #666;
+}
+
+
+th {
+
+	border: 1px solid gray;
+}
+
+td {
+	border: 1px solid gray;
+}

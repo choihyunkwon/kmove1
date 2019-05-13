@@ -27,6 +27,7 @@ WithDrawalDAO da = WithDrawalDAO.getInstance();
 MemberDAO dao = MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
 
+
 Integer balance = memberDTO.getBalance();
 int Expense_alance = balance - price;
 
@@ -42,6 +43,7 @@ da.update(dto);
 %>
 
 <body>
-입력완료
+입력완료<br>
+<input type=button onclick="self.close()" value="확인">
 </body>
 </html>

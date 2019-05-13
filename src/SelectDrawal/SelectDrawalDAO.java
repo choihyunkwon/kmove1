@@ -30,16 +30,16 @@ public class SelectDrawalDAO {
 		try {
 				con = DriverManager.getConnection(url,user,pass);
 				stmt = con.createStatement();
-				rs = stmt.executeQuery("select * from expense");
+				rs = stmt.executeQuery("select * from expense order by 1");
 				
 				while(rs.next()) {
-					String username = rs.getString("username");
+					String usedate = rs.getString("usedate");
 					int price = rs.getInt("price");
+					String usename = rs.getString("usename");
 					int expense_alance = rs.getInt("expense_alance");
 					String member_id = rs.getString("member_id");
-					String usedate = rs.getString("usedate");
 					
-					SelectDrawalDTO dto = new SelectDrawalDTO(usedate,price,username,expense_alance,member_id);
+					SelectDrawalDTO dto = new SelectDrawalDTO(usedate,price,usename,expense_alance,member_id);
 					dtos.add(dto);
 				}
 		}catch(Exception e) {

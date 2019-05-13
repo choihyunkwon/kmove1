@@ -9,9 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <%-- 자바빈 관련 액션태그 사용 --%>
-       
-    
+   <%-- 자바빈 관련 액션태그 사용 --%>   
     <%
         // 세션에서 아이디를 가져와 MemberBean에 세팅한다.
         String id= (String)session.getAttribute("id"); 
@@ -35,13 +33,7 @@
             history.go(-1);
         </script>
     <% 
-    }
-    
+    }    
     %>
-    
-
-    
-
-
 </body>
 </html>

@@ -9,14 +9,22 @@
 <link href="css/loginInfo.css" rel="stylesheet" type="text/css">
 </head>
 <style>
-header {
-	background-color: #666; padding : 30px;
-	text-align: center;
-	font-size: 35px;
-	color: white;
-	padding: 30px;
-	font-height:60px;
+input{
+padding:7px 30px 7px 30px;
+font-size:15px;
+font-weight:bold;
+color:black;
+border:solid 1px 0px 1px ;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#666));
+-webkit-border-radius:5px;
+border-bottom-color:#666;
+text-shadow:0 -1px 0 #666;
 }
+p{
+text-align:center;
+	font-size: 30px;
+	font-weight: bold;
+	}
 </style>
 <script type ="text/javascript">
 	/* function gomain() {
@@ -44,21 +52,18 @@ MemberDAO dao = MemberDAO.getInstance();
 MemberDTO memberDTO = dao.getUserInfo(id);
 %>
 <body>
-<header>
-<h1>회원정보</h1>
-</header>
-<div id="info">
+<div id="info1">
+<h1 >회원정보</h1>
+</div>
 <hr>
 <p>이름 : <%=memberDTO.getName() %></p>
 <p>아이디 : <%=memberDTO.getUserid()%></p> 
 <p>성별 : <%=memberDTO.getGender()%></p>
 <p>잔액 : <%=memberDTO.getBalance()%></p>
-</div>
-<div id ="button">
-<input type="button"  value="홈으로" onclick="main()">  
+<div id="button">
+<input type="button" value="홈으로" onclick="main()">  
 <input type="button" value="회원정보 수정" onclick="modify()">
 <input type="button" value="회원탈퇴"onclick="memberdel()">
 </div>
-
 </body>
 </html>

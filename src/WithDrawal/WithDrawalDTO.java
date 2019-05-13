@@ -1,5 +1,7 @@
 package WithDrawal;
 
+import java.sql.Date;
+
 public class WithDrawalDTO {
     private String usename, member_id, usedate;
 	private int price,expense_alance;

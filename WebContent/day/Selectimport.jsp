@@ -1,6 +1,7 @@
 <%@page import="selectimport.*"%>
 <%@page import="member.*"%>
 <%@page import="java.util.ArrayList" %>
+<%@page import="SelectDrawal.*" %>
 
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -19,6 +20,7 @@
 <tr align="center">
 <th>사용일자</th>
 <th>입 금</th>
+<th>출 금</th>
 <th>성 명</th>
 <th>잔 액</th>
 
@@ -26,23 +28,27 @@
 
 <%
 	SelectImportDAO da = new SelectImportDAO();
+	SelectDrawalDAO dt = new SelectDrawalDAO();
 	ArrayList<SelectImportDTO> dtos = da.OracleSelect();
+	ArrayList<SelectDrawalDTO> dtow = dt.OracleDrawal();
 	
 	for(int i=0; i<dtos.size(); i++){
 		SelectImportDTO dto = dtos.get(i);
+		SelectDrawalDTO dtoa = dtow.get(i);
 		
 	String id = session.getAttribute("id").toString();
 	MemberDAO dao = MemberDAO.getInstance();
 	MemberDTO memberDTO = dao.getUserInfo(id);
 	
 	
-	if(memberDTO.getName().equals(dto.getmember_id())){
+	if(memberDTO.getUserid().equals(dto.getmember_id())){
 		
 %>
 
 <tr align="center">
 <td><%=dto.getComedate() %></td>
 <td><%=dto.getComemoney() %></td>
+<td><%=dtoa.getPrice() %></td>
 <td><%=dto.getmember_id()%></td>
 <td><%=dto.getimport_balance()%></td>
 </tr>

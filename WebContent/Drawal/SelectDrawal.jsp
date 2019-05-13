@@ -1,59 +1,59 @@
-<%@page import="SelectDrawal.*" %>
-<%@page import="member.*" %>
+<%@page import="SelectDrawal.*"%>
+<%@page import="member.*"%>
 <%@page import="java.util.ArrayList" %>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ì¶œê¸ˆ</title>
+<title>ÁöÃâ ³»¿ª</title>
+<link href="../css/Drawal.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function selectback(){
+		window.location.href="../main.jsp";
+	}
+</script>
 </head>
 <body>
-<h4 align="center">ì¼ë³„</h4>
+<h3 align="center">ÀÏº°</h3>
 <table border="1" align="center" style="width:80%; heigh:450px" >
 <tr align="center">
-<th>ì‚¬ìš©ì¼ì</th>
-<th>ì‚¬ìš©ê¸ˆì•¡</th>
-<th>ì‚¬ìš©ì²˜</th>
-<th>ì”ì•¡</th>
-
+<th id="title">»ç¿ëÀÏÀÚ</th>
+<th id="title">Ãâ ±İ</th>
+<th id="title">»ç¿ëÃ³</th>
+<th id="title">ÀÜ ¾×</th>
 </tr>
 
 <%
-	SelectDrawalDAO dar = new SelectDrawalDAO();
-	ArrayList<SelectDrawalDTO> dtos = dar.OracleDrawal();
-	
+	SelectDrawalDAO da = new SelectDrawalDAO();
+	ArrayList<SelectDrawalDTO> dtos = da.OracleDrawal();
+
 	for(int i=0; i<dtos.size(); i++){
 		SelectDrawalDTO dto = dtos.get(i);
 		
-		String id = session.getAttribute("id").toString();
-		MemberDAO dao = MemberDAO.getInstance();
-		MemberDTO memberDTO = dao.getUserInfo(id);
-		
-		
-		if(memberDTO.getName().equals(dto.getMember_id())){
-		
+	String id = session.getAttribute("id").toString();
+	MemberDAO dao = MemberDAO.getInstance();
+	MemberDTO memberDTO = dao.getUserInfo(id);
+	
+	if(memberDTO.getUserid().equals(dto.getMember_id())){	
 %>
 
 <tr align="center">
-<td><%=dto.getUsername() %></td>
-<td><%=dto.getPrice() %></td>
-<td><%=dto.getExpense_alance() %></td>
-<td><%=dto.getMember_id() %></td>'
 <td><%=dto.getUsedate() %></td>
+<td><%=dto.getPrice() %></td>
+<td><%=dto.getMember_id()%></td>
+<td><%=dto.getExpense_alance()%></td>
 </tr>
-
 <%
-		}
-	}
+	}}
 	;
 %>
-
 </table>
-<div align="center">
-<input type="button" value="ë’¤ë¡œê°€ê¸°" >
+
+<br>
+<div id="button">
+<input id="button1" type="button" value="µ¹¾Æ°¡±â" onclick="selectback()">
 </div>
 </body>
 </html>

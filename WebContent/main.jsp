@@ -7,7 +7,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<style></style>
+<style type="text/css">
+input{
+padding:7px 30px 7px 30px;
+font-size:15px;
+font-weight:bold;
+color:black;
+text-align:center;
+border:solid 1px 0px 1px ;
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#666));
+-webkit-border-radius:5px;
+border-bottom-color:#666;
+text-shadow:0 -1px 0 #666;
+}
+</style>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript">
@@ -22,6 +35,10 @@
 	  }
 	   function showDisposit() {window.open("./day/Insertimport.jsp","충전금액","width=400,height=200,left=100,top=50");}
 	   function showDrawal() {window.open("./Drawal/WithDrawal.jsp","충전금액","width=400,height=200,left=100,top=50");}
+	   
+	 function selectDrawal(){
+		 window.location.href="./Drawal/SelectDrawal.jsp";
+	 }
 
 </script>
 </head>
@@ -49,6 +66,8 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 <h1>어서오세요  <%= memberDTO.getName() %>  님 </h1>
 <h2>현재 총 잔액은 <%= memberDTO.getBalance() %> 입니다</h2>
 <%} %>
+<input type="button" value="로그아웃" onclick="logoutpro()"/>
+<input type="button" value="회원정보" onclick="goLogin()">
 </div>
 
 <hr>
@@ -56,15 +75,14 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 
 </div>
 <div id="write1">
-<h2>오늘의 지출액은   　<input type="submit" value="확인하기"/> </h2>
+<h2>오늘의 지출액은   　<input type="submit" value="수입"/>
+					 <input type="button" value="지출" onclick="selectDrawal()"></h2>
 <h2>이달의 지출액은  　 <input type="submit" value="확인하기"/></h2>
 <h2>올해의 지출액은   　<input type="submit" value="확인하기"/></h2>
 </div>
 <div id="button1">				
 <input type="button" value="입금" onclick="showDisposit()"/>
 <input type="button" value="출금" onclick="showDrawal()"/>
-<input type="button" value="로그아웃" onclick="logoutpro()"/>
-<input type="button" value="회원정보" onclick="goLogin()">
 </div>
 
 </body>
