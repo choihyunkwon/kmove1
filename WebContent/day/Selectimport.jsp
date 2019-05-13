@@ -28,13 +28,10 @@
 
 <%
 	SelectImportDAO da = new SelectImportDAO();
-	SelectDrawalDAO dt = new SelectDrawalDAO();
 	ArrayList<SelectImportDTO> dtos = da.OracleSelect();
-	ArrayList<SelectDrawalDTO> dtow = dt.OracleDrawal();
 	
 	for(int i=0; i<dtos.size(); i++){
 		SelectImportDTO dto = dtos.get(i);
-		SelectDrawalDTO dtoa = dtow.get(i);
 		
 	String id = session.getAttribute("id").toString();
 	MemberDAO dao = MemberDAO.getInstance();
@@ -48,7 +45,6 @@
 <tr align="center">
 <td><%=dto.getComedate() %></td>
 <td><%=dto.getComemoney() %></td>
-<td><%=dtoa.getPrice() %></td>
 <td><%=dto.getmember_id()%></td>
 <td><%=dto.getimport_balance()%></td>
 </tr>
@@ -64,5 +60,31 @@
 <div align="center">
 <input type="button" value="뒤로가기" >
 </div>
+<table border="1" align="center" style="width:80%; heigh:450px" >
+<tr align="center">
+<th>입 금</th>
+
+</tr>
+
+<%
+	SelectImportDAO dad = new SelectImportDAO();
+	ArrayList<SelectImportDTO> dtot = da.sumSelect();
+	
+	for(int i=0; i<dtot.size(); i++){
+		SelectImportDTO dto = dtos.get(i);
+%>
+
+<tr align="center">
+<td><%=dto.getComemoney() %></td>
+</tr>
+
+<%
+	}
+	;
+%>
+
+
+</table>
+
 </body>
 </html>

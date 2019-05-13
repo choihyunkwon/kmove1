@@ -63,4 +63,43 @@ public class SelectImportDAO{
 		return dtos;
 	}
 	
+	public ArrayList<SelectImportDTO> sumSelect(){
+		
+		ArrayList<SelectImportDTO> dtos = new ArrayList<SelectImportDTO>();
+		
+		 Connection con = null;
+		 Statement  stmt= null;
+		 ResultSet rs =null;
+		
+		try {
+				con = DriverManager.getConnection(url,user,pass);
+				stmt = con.createStatement();
+				rs = stmt.executeQuery("select sum(comemoney) as comemoney from import order by 1");
+				
+				while(rs.next()) {
+					int comemoney = rs.getInt("comemoney"); 
+					
+					SelectImportDTO dto = new SelectImportDTO(comemoney);
+					dtos.add(dto);
+				}
+				
+			}catch(Exception e)	{
+				e.printStackTrace();
+			}finally {
+				try {
+				if (rs != null) rs.close();
+				if(stmt!=null) stmt.close();
+				if (con != null) con.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+	}
+		
+		
+		return dtos;
+	}
+
+	
+
+	
 }//class
