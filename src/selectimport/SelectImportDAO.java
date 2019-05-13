@@ -74,12 +74,12 @@ public class SelectImportDAO{
 		try {
 				con = DriverManager.getConnection(url,user,pass);
 				stmt = con.createStatement();
-				rs = stmt.executeQuery("select sum(comemoney) as comemoney from import order by 1");
+				rs = stmt.executeQuery("select sum(comemoney) as comemoney, member_id from import group by member_id order by 1");
 				
 				while(rs.next()) {
-					int comemoney = rs.getInt("comemoney"); 
-					
-					SelectImportDTO dto = new SelectImportDTO(comemoney);
+					int comemoney = rs.getInt("comemoney");
+					String member_id = rs.getString("member_id");
+					SelectImportDTO dto = new SelectImportDTO(comemoney,member_id);
 					dtos.add(dto);
 				}
 				

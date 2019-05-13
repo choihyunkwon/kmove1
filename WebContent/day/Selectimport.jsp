@@ -20,7 +20,6 @@
 <tr align="center">
 <th>사용일자</th>
 <th>입 금</th>
-<th>출 금</th>
 <th>성 명</th>
 <th>잔 액</th>
 
@@ -63,15 +62,20 @@
 <table border="1" align="center" style="width:80%; heigh:450px" >
 <tr align="center">
 <th>입 금</th>
-
 </tr>
 
 <%
 	SelectImportDAO dad = new SelectImportDAO();
-	ArrayList<SelectImportDTO> dtot = da.sumSelect();
+	ArrayList<SelectImportDTO> dtot = dad.sumSelect();
 	
 	for(int i=0; i<dtot.size(); i++){
-		SelectImportDTO dto = dtos.get(i);
+		SelectImportDTO dto = dtot.get(i);
+		
+		String id = session.getAttribute("id").toString();
+		MemberDAO dao = MemberDAO.getInstance();
+		MemberDTO memberDTO = dao.getUserInfo(id);
+		if(memberDTO.getUserid().equals(dto.getmember_id())){
+		
 %>
 
 <tr align="center">
@@ -79,6 +83,7 @@
 </tr>
 
 <%
+	}
 	}
 	;
 %>

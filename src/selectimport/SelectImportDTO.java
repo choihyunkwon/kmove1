@@ -56,9 +56,11 @@ public class SelectImportDTO {
     	this.member_id = member_id;
     	this.import_balance = import_balance;
     }
+	
     
-	public SelectImportDTO(int comemoney) {
+	public SelectImportDTO(int comemoney,String member_id) {
     	this.comemoney = comemoney;
+    	this.member_id = member_id;
     }
    
     
