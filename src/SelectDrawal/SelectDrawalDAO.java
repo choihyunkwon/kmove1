@@ -58,7 +58,7 @@ public class SelectDrawalDAO {
 	      try {
 	            con = DriverManager.getConnection(url,user,pass);
 	            stmt = con.createStatement();
-	            rs = stmt.executeQuery("select usename, price, expense_alance, member_id, to_char(usedate,'yyyy-mm') as usedate from expense group by usename, price, expense_alance,member_id, to_char(usedate,'yyyy-mm') order by usedate");
+	            rs = stmt.executeQuery("select sum(usename) as usename, price, expense_alance, member_id, to_char(usedate,'yyyy-mm') as usedate from expense group by usename, price, expense_alance,member_id, to_char(usedate,'yyyy-mm') order by usedate");
 	            
 	            while(rs.next()) {
 	               String usedate = rs.getString("usedate");
@@ -86,7 +86,7 @@ public class SelectDrawalDAO {
 	      try {
 	            con = DriverManager.getConnection(url,user,pass);
 	            stmt = con.createStatement();
-	            rs = stmt.executeQuery("select usename, price, expense_alance, member_id, to_char(usedate,'yyyy') as usedate from expense group by usename, price, expense_alance,member_id, to_char(usedate,'yyyy') order by usedate");
+	            rs = stmt.executeQuery("select sum(usename) as usename, price, expense_alance, member_id, to_char(usedate,'yyyy') as usedate from expense group by usename, price, expense_alance,member_id, to_char(usedate,'yyyy') order by usedate");
 	            
 	            while(rs.next()) {
 	               String usedate = rs.getString("usedate");
