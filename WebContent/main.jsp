@@ -39,7 +39,12 @@ text-shadow:0 -1px 0 #666;
 	 function selectDrawal(){
 		 window.location.href="./Drawal/SelectDrawal.jsp";
 	 }
-	 
+	 function selectDrawal_day(){
+		 window.location.href="./Drawal/SelectDrawal_day.jsp";
+	 }
+	 function selectDrawal_year(){
+		 window.location.href="./Drawal/SelectDrawal_year.jsp";
+	 }
 	 
 	 
 	 function dayimport(){
@@ -91,9 +96,9 @@ MemberDTO memberDTO = dao.getUserInfo(id);
 <h2>일일 지출표   　<input type="submit" value="수입" onclick="dayimport() "/>
 					<input type="button" value="지출" onclick="selectDrawal()"></h2>
 <h2>월별 지출표  　 <input type="submit" value="수입" onclick="dayimport_day() "/>
-					<input type="button" value="지출" onclick="selectDrawal()"></h2>
+					<input type="button" value="지출" onclick="selectDrawal_day()"></h2>
 <h2>연별 지출표   　<input type="submit" value="수입" onclick="dayimport_year() "/>
-					<input type="button" value="지출" onclick="selectDrawal()"></h2>
+					<input type="button" value="지출" onclick="selectDrawal_year()"></h2>
 </div>
 <div id="button1">				
 <input type="button" value="입금" onclick="showDisposit()"/>

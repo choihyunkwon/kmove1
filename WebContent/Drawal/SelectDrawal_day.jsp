@@ -16,7 +16,7 @@
 </script>
 </head>
 <body>
-<h3 align="center">일별</h3>
+<h3 align="center">월별</h3>
 <table border="1" align="center" style="width:80%; heigh:450px" >
 <tr align="center">
 <th id="title">사용일자</th>
@@ -27,7 +27,7 @@
 
 <%
    SelectDrawalDAO da = new SelectDrawalDAO();
-   ArrayList<SelectDrawalDTO> dtos = da.OracleDrawal();
+   ArrayList<SelectDrawalDTO> dtos = da.OracleDrawal_day();
 
    for(int i=0; i<dtos.size(); i++){
       SelectDrawalDTO dto = dtos.get(i);
