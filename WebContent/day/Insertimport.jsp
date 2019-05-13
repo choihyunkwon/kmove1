@@ -17,6 +17,10 @@
 			return false;
 		}
 	}
+	function close() {
+		self.close;
+	}
+	
 </script>
 </head>
 <body>
@@ -24,7 +28,8 @@
       name="insert" onsubmit="return checkValue()">
 	입금날짜 : <input type = "date" name="comedate" ><br>
 	입금 : <input type ="text" name ="comemoney" placeholder="0 "><br>
-	<input type = "submit" value = "확인"> <input type = "button" onclick="self.close()" value = "취소">
+	<input type = "submit" value = "확인"> 
+	<input type = "button" value = "취소" onclick="self.close()" >
       </form>
 </body>
 </html> 
