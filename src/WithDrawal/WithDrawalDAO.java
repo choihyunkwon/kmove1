@@ -3,7 +3,7 @@ package WithDrawal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
 
 
 public class WithDrawalDAO {
@@ -36,7 +36,7 @@ public class WithDrawalDAO {
 			ps.setString(5, dto.getUsedate());
 			// 쿼리 수행
 			ps.executeUpdate();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.out.println(e);
 			e.printStackTrace();
 		} finally {
