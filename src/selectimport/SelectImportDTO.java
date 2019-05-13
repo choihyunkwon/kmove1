@@ -58,10 +58,6 @@ public class SelectImportDTO {
     }
 	
     
-	public SelectImportDTO(int comemoney,String member_id) {
-    	this.comemoney = comemoney;
-    	this.member_id = member_id;
-    }
    
     
     

@@ -35,7 +35,7 @@ public class SelectImportDAO{
 		try {
 				con = DriverManager.getConnection(url,user,pass);
 				stmt = con.createStatement();
-				rs = stmt.executeQuery("select * from import order by 1");
+				rs = stmt.executeQuery("select TO_char(comedate,'yyyy-mm-dd') as comedate, sum(comemoney) as comemoney, member_id, max(import_balance) as import_balance from import group by comedate , member_id order by 1");
 				
 				while(rs.next()) {
 					String comedate = rs.getString("comedate");
@@ -74,12 +74,15 @@ public class SelectImportDAO{
 		try {
 				con = DriverManager.getConnection(url,user,pass);
 				stmt = con.createStatement();
-				rs = stmt.executeQuery("select sum(comemoney) as comemoney, member_id from import group by member_id order by 1");
+				rs = stmt.executeQuery("select TO_char(comedate,'yyyy-mm') as comedate, sum(comemoney) as comemoney, member_id, max(import_balance) as import_balance from import group by TO_char(comedate,'yyyy-mm') , member_id order by 1");
 				
 				while(rs.next()) {
-					int comemoney = rs.getInt("comemoney");
+					String comedate = rs.getString("comedate");
+					int comemoney = rs.getInt("comemoney"); 
 					String member_id = rs.getString("member_id");
-					SelectImportDTO dto = new SelectImportDTO(comemoney,member_id);
+					int import_balance = rs.getInt("import_balance");
+					
+					SelectImportDTO dto = new SelectImportDTO(comedate,comemoney,member_id,import_balance);
 					dtos.add(dto);
 				}
 				
