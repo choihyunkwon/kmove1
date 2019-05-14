@@ -30,7 +30,9 @@ public class SelectDrawalDAO {
       try {
             con = DriverManager.getConnection(url,user,pass);
             stmt = con.createStatement();
-            rs = stmt.executeQuery("select usename, price, expense_alance, member_id, to_char(usedate,'yyyy-mm-dd') as usedate from expense group by usename, price, expense_alance,member_id, to_char(usedate,'yyyy-mm-dd') order by usedate");
+            rs = stmt.executeQuery("select TO_char(usedate,'yyyy-mm-dd') as usedate,  usename, " + 
+            		"sum(price) as price, member_id, max(expense_alance) " + 
+            		"as expense_alance from expense group by usedate , usename , member_id order by 1");
             
             while(rs.next()) {
                String usedate = rs.getString("usedate");
@@ -58,7 +60,7 @@ public class SelectDrawalDAO {
 	      try {
 	            con = DriverManager.getConnection(url,user,pass);
 	            stmt = con.createStatement();
-	            rs = stmt.executeQuery("select sum(usename) as usename, price, expense_alance, member_id, to_char(usedate,'yyyy-mm') as usedate from expense group by usename, price, expense_alance,member_id, to_char(usedate,'yyyy-mm') order by usedate");
+	            rs = stmt.executeQuery("select TO_char(usedate,'yyyy-mm') as usedate, usename,sum(price) as price, member_id, max(expense_alance) as expense_alance from expense group by TO_char(usedate,'yyyy-mm'), usename , member_id order by 1");
 	            
 	            while(rs.next()) {
 	               String usedate = rs.getString("usedate");
@@ -86,7 +88,7 @@ public class SelectDrawalDAO {
 	      try {
 	            con = DriverManager.getConnection(url,user,pass);
 	            stmt = con.createStatement();
-	            rs = stmt.executeQuery("select sum(usename) as usename, price, expense_alance, member_id, to_char(usedate,'yyyy') as usedate from expense group by usename, price, expense_alance,member_id, to_char(usedate,'yyyy') order by usedate");
+	            rs = stmt.executeQuery("select TO_char(usedate,'yyyy') as usedate, usename,sum(price) as price, member_id, max(expense_alance) as expense_alance from expense group by TO_char(usedate,'yyyy'), usename , member_id order by 1");
 	            
 	            while(rs.next()) {
 	               String usedate = rs.getString("usedate");
