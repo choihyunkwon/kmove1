@@ -38,7 +38,9 @@ da.update(dto);
 %>
 
 <body>
-입력완료
-<input type=button onclick="self.close()" value="확인">
+<script type="text/javascript">
+	alert("입금되었습니다");
+	self.close();
+</script>
 </body>
 </html>

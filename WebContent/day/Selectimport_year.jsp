@@ -3,25 +3,23 @@
 <%@page import="java.util.ArrayList" %>
 <%@page import="SelectDrawal.*" %>
 
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-
-
 <html>
 <head>
-<meta charset="UTF-8">
-<title>수입 내역</title>
+<meta charset="EUC-KR">
+<title>년별 입금</title>
 <link href="../css/Drawal.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	function selectback(){
 		window.location.href="../main.jsp";
 	}
 </script>
-
 </head>
 <body>
-<h3 align="center">일별</h3>
+<h3 align="center">연별</h3>
 <table border="1" align="center" style="width:80%; heigh:450px" >
 <tr align="center">
 <th id="title">사용일자</th>
@@ -30,18 +28,17 @@
 <th id="title">잔 액</th>
 </tr>
 <%
-	SelectImportDAO da = new SelectImportDAO();
-	ArrayList<SelectImportDTO> dtos = da.OracleSelect();
+	SelectImportDAO dadd = new SelectImportDAO();
+	ArrayList<SelectImportDTO> dtott = dadd.yearSelect();
 	
-	for(int i=0; i<dtos.size(); i++){
-		SelectImportDTO dto = dtos.get(i);
+	for(int i=0; i<dtott.size(); i++){
+		SelectImportDTO dto = dtott.get(i);
 		
-	String id = session.getAttribute("id").toString();
-	MemberDAO dao = MemberDAO.getInstance();
-	MemberDTO memberDTO = dao.getUserInfo(id);
-	
-	
-	if(memberDTO.getUserid().equals(dto.getmember_id())){
+		String id = session.getAttribute("id").toString();
+		MemberDAO dao = MemberDAO.getInstance();
+		MemberDTO memberDTO = dao.getUserInfo(id);
+		
+		if(memberDTO.getUserid().equals(dto.getmember_id())){
 		
 %>
 <tr align="center">
