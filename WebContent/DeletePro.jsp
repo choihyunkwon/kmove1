@@ -25,6 +25,8 @@ function login() {
         // 가져온 결과를 가지고 회원정보를 삭제한다. - 삭제결과를 반환
         MemberDAO dao = MemberDAO.getInstance();
         int check = dao.deleteMember(id, pw);
+        int check1= dao.deleteimport(id, pw);
+        int check2=dao.deletexpense(id, pw);
         System.out.println(id);
         if(check == 1){
             session.invalidate(); // 삭제했다면 세션정보를 삭제한다.
